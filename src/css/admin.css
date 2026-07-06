@@ -1,0 +1,5 @@
+/* S7 Sports - Admin Styles */
+body { font-family: 'Inter', sans-serif; }
+.sidebar-link.active { background: #0F5E3A; color: white; }
+.sidebar-link:hover:not(.active) { background: #e5e7eb; }
+table th { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; }
