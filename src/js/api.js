@@ -34,11 +34,15 @@ function headers() {
   };
 }
 
+function getAdminUser() {
+  return typeof sessionStorage !== 'undefined' ? sessionStorage.getItem('s7_admin') : null;
+}
+
 async function adminFetch({ path, method, body, prefer, upload }) {
   const res = await fetch('/api/admin', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ path, method, body, prefer, upload }),
+    body: JSON.stringify({ path, method, body, prefer, upload, username: getAdminUser() }),
   });
   const text = await res.text();
   if (!res.ok) {

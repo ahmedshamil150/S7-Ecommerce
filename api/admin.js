@@ -3,9 +3,17 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { path, method, body, prefer, upload } = req.body;
+  const { path, method, body, prefer, upload, username } = req.body;
   const supabaseUrl = process.env.VITE_SUPABASE_URL;
   const svcKey = process.env.VITE_SUPABASE_SERVICE_KEY;
+
+  const adminUsers = [
+    process.env.VITE_ADMIN_USER1,
+    process.env.VITE_ADMIN_USER2,
+  ];
+  if (!username || !adminUsers.includes(username)) {
+    return res.status(401).json({ error: 'Unauthorized' });
+  }
 
   if (!supabaseUrl || !svcKey) {
     return res.status(500).json({ error: 'Missing Supabase configuration' });
