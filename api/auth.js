@@ -10,7 +10,6 @@ export default async function handler(req, res) {
   const user2 = process.env.VITE_ADMIN_USER2;
   const pass2 = process.env.VITE_ADMIN_PASS2;
 
-  // Check with direct comparison
   if (username === user1 && password === pass1) {
     return res.status(200).json({ success: true, user: username });
   }
@@ -19,13 +18,5 @@ export default async function handler(req, res) {
     return res.status(200).json({ success: true, user: username });
   }
 
-  return res.status(401).json({
-    success: false,
-    error: 'Invalid credentials',
-    debug: {
-      receivedUser: username,
-      expectedUser1: user1 || '(not set)',
-      expectedUser2: user2 || '(not set)',
-    }
-  });
+  return res.status(401).json({ success: false, error: 'Invalid credentials' });
 }
