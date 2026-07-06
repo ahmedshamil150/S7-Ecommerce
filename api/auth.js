@@ -4,18 +4,28 @@ export default async function handler(req, res) {
   }
 
   const { username, password } = req.body;
-  if (!username || !password) {
-    return res.status(400).json({ success: false, error: 'Username and password required' });
-  }
 
-  const users = {
-    [process.env.VITE_ADMIN_USER1 || 'Salman']: process.env.VITE_ADMIN_PASS1 || '',
-    [process.env.VITE_ADMIN_USER2 || 'Ahmed']: process.env.VITE_ADMIN_PASS2 || '',
-  };
+  const user1 = process.env.VITE_ADMIN_USER1;
+  const pass1 = process.env.VITE_ADMIN_PASS1;
+  const user2 = process.env.VITE_ADMIN_USER2;
+  const pass2 = process.env.VITE_ADMIN_PASS2;
 
-  if (users[username] && users[username] === password) {
+  // Check with direct comparison
+  if (username === user1 && password === pass1) {
     return res.status(200).json({ success: true, user: username });
   }
 
-  return res.status(401).json({ success: false, error: 'Invalid credentials' });
+  if (username === user2 && password === pass2) {
+    return res.status(200).json({ success: true, user: username });
+  }
+
+  return res.status(401).json({
+    success: false,
+    error: 'Invalid credentials',
+    debug: {
+      receivedUser: username,
+      expectedUser1: user1 || '(not set)',
+      expectedUser2: user2 || '(not set)',
+    }
+  });
 }
