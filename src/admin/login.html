@@ -36,23 +36,35 @@ tailwind.config = {
 </div>
 </div>
 <script>
-document.getElementById('login-form').addEventListener('submit', (e) => {
+document.getElementById('login-form').addEventListener('submit', async (e) => {
   e.preventDefault();
   const username = document.getElementById('username').value;
   const password = document.getElementById('password').value;
   const errorEl = document.getElementById('login-error');
+  const btn = e.target.querySelector('button');
+  btn.disabled = true;
+  btn.textContent = 'Signing in...';
 
-  const users = {
-    Salman: 'S7Sp0rts@Salman1',
-    Ahmed: 'S7Sp0rts@Ahmed2',
-  };
-
-  if (users[username] && users[username] === password) {
-    sessionStorage.setItem('s7_admin', username);
-    window.location.href = './dashboard';
-  } else {
-    errorEl.textContent = 'Invalid username or password';
+  try {
+    const res = await fetch('/api/auth', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ username, password }),
+    });
+    const data = await res.json();
+    if (data.success) {
+      sessionStorage.setItem('s7_admin', username);
+      window.location.href = './dashboard';
+    } else {
+      errorEl.textContent = 'Invalid username or password';
+      errorEl.classList.remove('hidden');
+    }
+  } catch {
+    errorEl.textContent = 'Connection error. Please try again.';
     errorEl.classList.remove('hidden');
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Sign In';
   }
 });
 </script>
