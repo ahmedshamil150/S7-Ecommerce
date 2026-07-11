@@ -132,6 +132,7 @@ async function applyCoupon() {
     const result = await validateCoupon(code);
     couponDiscount = Math.round(subtotal() * result.discount_percent / 100);
     couponCode = code.toUpperCase();
+    sessionStorage.setItem('s7_coupon', code.toUpperCase());
     msg.textContent = `Coupon applied! ${result.discount_percent}% off (Rs ${couponDiscount.toLocaleString()})`;
     msg.className = 'text-green-600 text-sm';
     input.readOnly = true;
