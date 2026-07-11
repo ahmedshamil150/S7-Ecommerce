@@ -116,32 +116,20 @@ tailwind.config = {
 <body class="bg-background text-on-background selection:bg-secondary-fixed selection:text-primary overflow-x-hidden">
 
 <!-- Top Navigation Bar -->
-<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-desktop h-20 bg-surface-container-lowest dark:bg-primary-container border-b border-outline-variant shadow-sm transition-all duration-300">
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-desktop h-20 bg-surface-container-lowest border-b border-outline-variant shadow-sm transition-all duration-300">
   <div class="flex items-center gap-8">
-    <a class="font-headline-md text-headline-md font-black italic tracking-tighter text-primary dark:text-primary-fixed" href="./">S7 SPORTS</a>
+    <a class="font-headline-md text-headline-md font-black italic tracking-tighter text-primary" href="./">S7 SPORTS</a>
     <div class="hidden md:flex items-center gap-6">
-      <a class="font-body-md text-body-md text-primary dark:text-secondary-fixed font-bold border-b-2 border-secondary-fixed hover:text-secondary transition-colors duration-200" href="./shop">Bats</a>
-      <a class="font-body-md text-body-md text-on-surface-variant dark:text-primary-fixed-dim hover:text-secondary transition-colors duration-200" href="./shop">Protective</a>
-      <a class="font-body-md text-body-md text-on-surface-variant dark:text-primary-fixed-dim hover:text-secondary transition-colors duration-200" href="./shop">Footwear</a>
-      <a class="font-body-md text-body-md text-on-surface-variant dark:text-primary-fixed-dim hover:text-secondary transition-colors duration-200" href="./shop">Apparel</a>
+      <a class="font-body-md text-body-md text-primary font-bold hover:text-secondary transition-colors" href="./shop">Shop</a>
+      <a class="font-body-md text-body-md text-primary font-bold hover:text-secondary transition-colors" href="./cart">Cart</a>
+      <a class="font-body-md text-body-md text-primary font-bold hover:text-secondary transition-colors" href="./order-status">Track</a>
     </div>
   </div>
   <div class="flex items-center gap-4">
-    <div class="hidden lg:flex relative">
-      <input class="bg-surface-container-low border-none rounded-lg px-4 py-2 w-64 focus:ring-2 focus:ring-secondary-fixed text-body-md" placeholder="Search elite gear..." type="text"/>
-      <span class="material-symbols-outlined absolute right-3 top-2 text-on-surface-variant">search</span>
-    </div>
-    <div class="flex items-center gap-4">
-      <a href="./admin/login" class="material-symbols-outlined text-primary dark:text-primary-fixed hover:scale-110 transition-transform">person</a>
-      <a href="./wishlist" class="material-symbols-outlined text-primary dark:text-primary-fixed hover:scale-110 transition-transform relative">
-        favorite
-        <span class="wishlist-badge absolute -top-2 -right-2 bg-secondary-fixed text-primary text-[10px] font-bold px-1.5 py-0.5 rounded-full" style="display:none">0</span>
-      </a>
-      <a href="./cart" class="material-symbols-outlined text-primary dark:text-primary-fixed hover:scale-110 transition-transform relative">
-        shopping_cart
-        <span class="cart-badge absolute -top-2 -right-2 bg-secondary-fixed text-primary text-[10px] font-bold px-1.5 py-0.5 rounded-full" style="display:none">0</span>
-      </a>
-    </div>
+    <a href="./cart" class="material-symbols-outlined text-primary hover:scale-110 transition-transform relative">
+      shopping_cart
+      <span class="cart-badge absolute -top-2 -right-2 bg-secondary-fixed text-primary text-[10px] font-bold px-1.5 py-0.5 rounded-full" style="display:none">0</span>
+    </a>
   </div>
 </nav>
 
@@ -323,36 +311,23 @@ tailwind.config = {
 <footer class="w-full py-12 px-margin-desktop flex flex-col md:flex-row justify-between items-start gap-gutter bg-primary mt-12">
   <div class="flex flex-col gap-6 md:w-1/3">
     <span class="font-headline-lg text-headline-lg font-black italic text-secondary-fixed">S7 SPORTS</span>
-    <p class="font-body-md text-primary-fixed-dim max-w-xs">
-      Premium cricket equipment engineered for the modern athlete. High performance, zero compromise.
-    </p>
-    <div class="flex gap-4">
-      <a class="w-10 h-10 rounded-full border border-primary-fixed-dim/30 flex items-center justify-center text-secondary-fixed hover:border-secondary-fixed transition-colors" href="#">
-        <svg class="w-5 h-5 fill-current" viewbox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path></svg>
-      </a>
-      <a class="w-10 h-10 rounded-full border border-primary-fixed-dim/30 flex items-center justify-center text-secondary-fixed hover:border-secondary-fixed transition-colors" href="#">
-        <svg class="w-5 h-5 fill-current" viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
-      </a>
-    </div>
+    <p class="font-body-md text-primary-fixed-dim max-w-xs">Premium cricket equipment engineered for the modern athlete.</p>
   </div>
   <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
     <div class="flex flex-col gap-3">
       <span class="font-label-bold text-secondary-fixed text-xs tracking-widest uppercase mb-2">Shop</span>
       <a class="font-body-md text-primary-fixed-dim hover:text-secondary-fixed transition-colors" href="./shop">Bats</a>
       <a class="font-body-md text-primary-fixed-dim hover:text-secondary-fixed transition-colors" href="./shop">Protective</a>
-      <a class="font-body-md text-primary-fixed-dim hover:text-secondary-fixed transition-colors" href="./shop">Footwear</a>
-      <a class="font-body-md text-primary-fixed-dim hover:text-secondary-fixed transition-colors" href="./shop">Apparel</a>
     </div>
     <div class="flex flex-col gap-3">
       <span class="font-label-bold text-secondary-fixed text-xs tracking-widest uppercase mb-2">Service</span>
       <a class="font-body-md text-primary-fixed-dim hover:text-secondary-fixed transition-colors" href="./order-status">Track Order</a>
       <a class="font-body-md text-primary-fixed-dim hover:text-secondary-fixed transition-colors" href="./contact">Contact Us</a>
-      <a class="font-body-md text-primary-fixed-dim hover:text-secondary-fixed transition-colors" href="./privacy">Privacy Policy</a>
     </div>
     <div class="flex flex-col gap-3">
       <span class="font-label-bold text-secondary-fixed text-xs tracking-widest uppercase mb-2">Info</span>
       <a class="font-body-md text-primary-fixed-dim hover:text-secondary-fixed transition-colors" href="./about">About Us</a>
-      <a class="font-body-md text-primary-fixed-dim hover:text-secondary-fixed transition-colors" href="./contact">Support</a>
+      <a class="font-body-md text-primary-fixed-dim hover:text-secondary-fixed transition-colors" href="./privacy">Privacy</a>
     </div>
   </div>
 </footer>
@@ -386,11 +361,17 @@ tailwind.config = {
 window.onscroll = function() {
   const nav = document.querySelector('nav');
   if (window.scrollY > 50) {
-    nav.classList.add('h-16', 'bg-surface-container-lowest/90', 'backdrop-blur-md');
-    nav.classList.remove('h-20');
+    nav.classList.add('rounded-full', 'shadow-lg', 'bg-surface-container-lowest/90', 'backdrop-blur-md');
+    nav.classList.remove('border-b', 'border-outline-variant', 'shadow-sm');
+    nav.style.left = '16px';
+    nav.style.right = '16px';
+    nav.style.width = 'auto';
   } else {
-    nav.classList.add('h-20');
-    nav.classList.remove('h-16', 'bg-surface-container-lowest/90', 'backdrop-blur-md');
+    nav.classList.remove('rounded-full', 'shadow-lg', 'bg-surface-container-lowest/90', 'backdrop-blur-md');
+    nav.classList.add('border-b', 'border-outline-variant', 'shadow-sm');
+    nav.style.left = '';
+    nav.style.right = '';
+    nav.style.width = '';
   }
 };
 </script>

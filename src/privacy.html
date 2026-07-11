@@ -62,6 +62,7 @@ tailwind.config = {
     <div class="hidden md:flex items-center gap-6">
       <a class="font-body-md text-body-md text-primary font-bold hover:text-secondary transition-colors" href="./shop">Shop</a>
       <a class="font-body-md text-body-md text-primary font-bold hover:text-secondary transition-colors" href="./cart">Cart</a>
+      <a class="font-body-md text-body-md text-primary font-bold hover:text-secondary transition-colors" href="./order-status">Track</a>
     </div>
   </div>
   <div class="flex items-center gap-4">
@@ -124,18 +125,18 @@ tailwind.config = {
   <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
     <div class="flex flex-col gap-3">
       <span class="font-label-bold text-secondary-fixed text-xs tracking-widest uppercase mb-2">Shop</span>
-      <a class="font-body-md text-primary-fixed-dim hover:text-secondary-fixed" href="./shop">Bats</a>
-      <a class="font-body-md text-primary-fixed-dim hover:text-secondary-fixed" href="./shop">Protective</a>
+      <a class="font-body-md text-primary-fixed-dim hover:text-secondary-fixed transition-colors" href="./shop">Bats</a>
+      <a class="font-body-md text-primary-fixed-dim hover:text-secondary-fixed transition-colors" href="./shop">Protective</a>
     </div>
     <div class="flex flex-col gap-3">
       <span class="font-label-bold text-secondary-fixed text-xs tracking-widest uppercase mb-2">Service</span>
-      <a class="font-body-md text-primary-fixed-dim hover:text-secondary-fixed" href="./order-status">Track Order</a>
-      <a class="font-body-md text-primary-fixed-dim hover:text-secondary-fixed" href="./contact">Contact Us</a>
+      <a class="font-body-md text-primary-fixed-dim hover:text-secondary-fixed transition-colors" href="./order-status">Track Order</a>
+      <a class="font-body-md text-primary-fixed-dim hover:text-secondary-fixed transition-colors" href="./contact">Contact Us</a>
     </div>
     <div class="flex flex-col gap-3">
       <span class="font-label-bold text-secondary-fixed text-xs tracking-widest uppercase mb-2">Info</span>
-      <a class="font-body-md text-primary-fixed-dim hover:text-secondary-fixed" href="./about">About Us</a>
-      <a class="font-body-md text-primary-fixed-dim hover:text-secondary-fixed" href="./privacy">Privacy</a>
+      <a class="font-body-md text-primary-fixed-dim hover:text-secondary-fixed transition-colors" href="./about">About Us</a>
+      <a class="font-body-md text-primary-fixed-dim hover:text-secondary-fixed transition-colors" href="./privacy">Privacy</a>
     </div>
   </div>
 </footer>
@@ -144,11 +145,17 @@ tailwind.config = {
 window.onscroll = function() {
   const nav = document.querySelector('nav');
   if (window.scrollY > 50) {
-    nav.classList.add('h-16', 'bg-surface-container-lowest/90', 'backdrop-blur-md');
-    nav.classList.remove('h-20');
+    nav.classList.add('rounded-full', 'shadow-lg', 'bg-surface-container-lowest/90', 'backdrop-blur-md');
+    nav.classList.remove('border-b', 'border-outline-variant', 'shadow-sm');
+    nav.style.left = '16px';
+    nav.style.right = '16px';
+    nav.style.width = 'auto';
   } else {
-    nav.classList.add('h-20');
-    nav.classList.remove('h-16', 'bg-surface-container-lowest/90', 'backdrop-blur-md');
+    nav.classList.remove('rounded-full', 'shadow-lg', 'bg-surface-container-lowest/90', 'backdrop-blur-md');
+    nav.classList.add('border-b', 'border-outline-variant', 'shadow-sm');
+    nav.style.left = '';
+    nav.style.right = '';
+    nav.style.width = '';
   }
 };
 </script>
