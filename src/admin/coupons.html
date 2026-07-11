@@ -1,1 +1,51 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Coupons - S7 Sports Admin</title></head><body>Coupons placeholder</body></html>
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Coupons - S7 Sports Admin</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../css/admin.css"/>
+</head>
+<body class="admin-body">
+<button id="admin-burger" class="admin-burger" aria-label="Menu">☰</button>
+<div id="admin-overlay" class="admin-overlay"></div>
+<aside id="admin-sidebar" class="admin-sidebar">
+  <h2>S7 <span>SPORTS</span></h2>
+  <nav>
+    <ul>
+      <li><a href="./dashboard"><span class="nav-icon">📊</span>Dashboard</a></li>
+      <li><a href="./products"><span class="nav-icon">🏏</span>Products</a></li>
+      <li><a href="./orders"><span class="nav-icon">📦</span>Orders</a></li>
+      <li><a href="./invoices"><span class="nav-icon">🧾</span>Invoices</a></li>
+      <li><a href="./revenue"><span class="nav-icon">💰</span>Revenue</a></li>
+      <li><a href="./reviews"><span class="nav-icon">⭐</span>Reviews</a></li>
+      <li><a href="./coupons" class="active"><span class="nav-icon">🏷️</span>Coupons</a></li>
+      <li><a href="./categories"><span class="nav-icon">📂</span>Categories</a></li>
+      <li><a href="./hero"><span class="nav-icon">🖼️</span>Hero</a></li>
+      <li><a href="./charges"><span class="nav-icon">⚡</span>Charges</a></li>
+      <li><a href="./analytics"><span class="nav-icon">📈</span>Analytics</a></li>
+    </ul>
+  </nav>
+  <div class="nav-bottom">
+    <a href="./login" id="logout-btn"><span class="nav-icon">🚪</span>Logout</a>
+  </div>
+</aside>
+<main class="admin-main">
+  <div class="admin-page-header">
+    <h2>Coupons</h2>
+  </div>
+  <form id="coupon-form" style="display:flex;flex-wrap:wrap;gap:0.75rem;margin-bottom:1.5rem;background:#121212;padding:1.25rem;border-radius:12px;border:1px solid #2a2a2a;">
+    <input id="c-code" type="text" placeholder="Code (e.g. SAVE10)" required style="flex:1;min-width:120px;padding:0.5rem 0.75rem;border:1.5px solid #2a2a2a;border-radius:8px;background:#1a1a1a;color:#e8e8e8;font-size:0.85rem;font-family:Inter,sans-serif;" />
+    <input id="c-discount" type="number" placeholder="Discount %" min="1" max="100" required style="width:100px;padding:0.5rem 0.75rem;border:1.5px solid #2a2a2a;border-radius:8px;background:#1a1a1a;color:#e8e8e8;font-size:0.85rem;font-family:Inter,sans-serif;" />
+    <input id="c-max-uses" type="number" placeholder="Max uses (0=∞)" min="0" style="width:120px;padding:0.5rem 0.75rem;border:1.5px solid #2a2a2a;border-radius:8px;background:#1a1a1a;color:#e8e8e8;font-size:0.85rem;font-family:Inter,sans-serif;" />
+    <input id="c-expires" type="date" style="width:140px;padding:0.5rem 0.75rem;border:1.5px solid #2a2a2a;border-radius:8px;background:#1a1a1a;color:#e8e8e8;font-size:0.85rem;font-family:Inter,sans-serif;" />
+    <button type="submit" class="button" id="create-coupon-btn">Create Coupon</button>
+    <p id="coupon-form-msg" style="display:none;color:#ef5350;font-size:0.85rem;width:100%;margin-top:0.25rem;"></p>
+  </form>
+  <div id="coupons-table"><div class="admin-spinner">Loading…</div></div>
+</main>
+<script type="module" src="../js/admin.js"></script>
+</body>
+</html>

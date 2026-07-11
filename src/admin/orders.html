@@ -1,1 +1,44 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Orders - S7 Sports Admin</title></head><body>Orders placeholder</body></html>
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Orders - S7 Sports Admin</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../css/admin.css"/>
+</head>
+<body class="admin-body">
+<button id="admin-burger" class="admin-burger" aria-label="Menu">☰</button>
+<div id="admin-overlay" class="admin-overlay"></div>
+<aside id="admin-sidebar" class="admin-sidebar">
+  <h2>S7 <span>SPORTS</span></h2>
+  <nav>
+    <ul>
+      <li><a href="./dashboard"><span class="nav-icon">📊</span>Dashboard</a></li>
+      <li><a href="./products"><span class="nav-icon">🏏</span>Products</a></li>
+      <li><a href="./orders" class="active"><span class="nav-icon">📦</span>Orders</a></li>
+      <li><a href="./invoices"><span class="nav-icon">🧾</span>Invoices</a></li>
+      <li><a href="./revenue"><span class="nav-icon">💰</span>Revenue</a></li>
+      <li><a href="./reviews"><span class="nav-icon">⭐</span>Reviews</a></li>
+      <li><a href="./coupons"><span class="nav-icon">🏷️</span>Coupons</a></li>
+      <li><a href="./categories"><span class="nav-icon">📂</span>Categories</a></li>
+      <li><a href="./hero"><span class="nav-icon">🖼️</span>Hero</a></li>
+      <li><a href="./charges"><span class="nav-icon">⚡</span>Charges</a></li>
+      <li><a href="./analytics"><span class="nav-icon">📈</span>Analytics</a></li>
+    </ul>
+  </nav>
+  <div class="nav-bottom">
+    <a href="./login" id="logout-btn"><span class="nav-icon">🚪</span>Logout</a>
+  </div>
+</aside>
+<main class="admin-main">
+  <div class="admin-page-header">
+    <h2>Orders</h2>
+  </div>
+  <div id="order-filters" style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1rem;"></div>
+  <div id="orders-table"><div class="admin-spinner">Loading…</div></div>
+</main>
+<script type="module" src="../js/admin.js"></script>
+</body>
+</html>

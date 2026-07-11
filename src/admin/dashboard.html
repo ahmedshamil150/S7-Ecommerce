@@ -1,1 +1,64 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Dashboard - S7 Sports Admin</title></head><body>Dashboard placeholder</body></html>
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dashboard - S7 Sports Admin</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/chart.js" rel="preload" as="script"/>
+<link rel="stylesheet" href="../css/admin.css"/>
+</head>
+<body class="admin-body">
+<button id="admin-burger" class="admin-burger" aria-label="Menu">☰</button>
+<div id="admin-overlay" class="admin-overlay"></div>
+<aside id="admin-sidebar" class="admin-sidebar">
+  <h2>S7 <span>SPORTS</span></h2>
+  <nav>
+    <ul>
+      <li><a href="./dashboard" class="active"><span class="nav-icon">📊</span>Dashboard</a></li>
+      <li><a href="./products"><span class="nav-icon">🏏</span>Products</a></li>
+      <li><a href="./orders"><span class="nav-icon">📦</span>Orders</a></li>
+      <li><a href="./invoices"><span class="nav-icon">🧾</span>Invoices</a></li>
+      <li><a href="./revenue"><span class="nav-icon">💰</span>Revenue</a></li>
+      <li><a href="./reviews"><span class="nav-icon">⭐</span>Reviews</a></li>
+      <li><a href="./coupons"><span class="nav-icon">🏷️</span>Coupons</a></li>
+      <li><a href="./categories"><span class="nav-icon">📂</span>Categories</a></li>
+      <li><a href="./hero"><span class="nav-icon">🖼️</span>Hero</a></li>
+      <li><a href="./charges"><span class="nav-icon">⚡</span>Charges</a></li>
+      <li><a href="./analytics"><span class="nav-icon">📈</span>Analytics</a></li>
+    </ul>
+  </nav>
+  <div class="nav-bottom">
+    <a href="./login" id="logout-btn"><span class="nav-icon">🚪</span>Logout</a>
+  </div>
+</aside>
+<main class="admin-main">
+  <div class="admin-page-header">
+    <h2>Dashboard</h2>
+  </div>
+  <div class="admin-stats dashboard-stats" id="dashboard-stats">
+    <div class="stat-card"><h3 id="stat-products">—</h3><p>Products</p></div>
+    <div class="stat-card"><h3 id="stat-revenue">—</h3><p>Revenue</p></div>
+    <div class="stat-card"><h3 id="stat-reviews">—</h3><p>Reviews</p></div>
+    <div class="stat-card stat-pending"><h3 id="stat-pending">—</h3><p>Pending</p></div>
+    <div class="stat-card stat-confirmed"><h3 id="stat-confirmed">—</h3><p>Confirmed</p></div>
+    <div class="stat-card stat-shipped"><h3 id="stat-shipped">—</h3><p>Shipped</p></div>
+    <div class="stat-card stat-delivered"><h3 id="stat-delivered">—</h3><p>Delivered</p></div>
+    <div class="stat-card stat-cancelled"><h3 id="stat-cancelled">—</h3><p>Cancelled</p></div>
+    <div class="stat-card stat-return"><h3 id="stat-return-requested">—</h3><p>Return Requests</p></div>
+    <div class="stat-card stat-return"><h3 id="stat-returned">—</h3><p>Returned</p></div>
+  </div>
+  <h3 class="admin-subtitle">Revenue Trend</h3>
+  <div class="chart-wrap">
+    <div class="chart-controls">
+      <button class="chart-btn active" id="chart-7d">7 Days</button>
+      <button class="chart-btn" id="chart-30d">30 Days</button>
+    </div>
+    <canvas id="revenue-chart"></canvas>
+  </div>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script type="module" src="../js/admin.js"></script>
+</body>
+</html>
