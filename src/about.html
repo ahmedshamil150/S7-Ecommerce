@@ -1,1 +1,156 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>About - S7 Sports</title></head><body>About page placeholder</body></html>
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About Us - S7 SPORTS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&amp;family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link rel="icon" type="image/svg+xml" href="./public/favicon.svg" />
+<script>
+tailwind.config = {
+  darkMode: "class",
+  theme: { extend: {
+    colors: {
+      "surface-container": "#edeef0", "tertiary-container": "#00174b",
+      "secondary-fixed": "#caf300", "primary-fixed-dim": "#c6c6ca",
+      "error-container": "#ffdad6", "on-primary": "#ffffff",
+      "on-primary-container": "#838487", "surface-variant": "#e1e2e4",
+      "outline-variant": "#c6c6ca", "primary-fixed": "#e2e2e6",
+      "primary": "#000000", "on-primary-fixed-variant": "#45474a",
+      "surface-bright": "#f8f9fb", "on-tertiary-fixed-variant": "#003ea8",
+      "tertiary-fixed": "#dbe1ff", "on-surface": "#191c1e",
+      "on-secondary-fixed": "#171e00", "on-secondary": "#ffffff",
+      "tertiary": "#000000", "surface-container-lowest": "#ffffff",
+      "inverse-on-surface": "#f0f1f3", "surface-dim": "#d9dadc",
+      "secondary": "#536600", "on-primary-fixed": "#1a1c1f",
+      "surface-tint": "#5d5e62", "surface-container-low": "#f3f4f6",
+      "on-surface-variant": "#45474a", "error": "#ba1a1a",
+      "secondary-fixed-dim": "#b0d500", "surface-container-highest": "#e1e2e4",
+      "on-secondary-container": "#576a00", "background": "#f8f9fb",
+      "on-background": "#191c1e", "outline": "#76777b",
+      "inverse-surface": "#2e3132", "secondary-container": "#c7ef00",
+      "surface": "#f8f9fb", "on-secondary-fixed-variant": "#3e4c00",
+      "inverse-primary": "#c6c6ca", "primary-container": "#1a1c1f",
+      "tertiary-fixed-dim": "#b4c5ff", "surface-container-high": "#e7e8ea",
+      "on-tertiary-fixed": "#00174b", "on-tertiary": "#ffffff",
+      "on-tertiary-container": "#487cff"
+    },
+    borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px" },
+    spacing: { "margin-mobile": "16px", "container-max": "1280px", "margin-desktop": "48px", "gutter": "24px", "base": "8px" },
+    fontFamily: { "body-lg": ["Inter"], "body-md": ["Inter"], "label-bold": ["Inter"], "headline-lg": ["Montserrat"], "headline-md": ["Montserrat"], "display-lg": ["Montserrat"] },
+    fontSize: {
+      "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+      "body-md": ["16px", { lineHeight: "1.5", fontWeight: "400" }],
+      "label-bold": ["14px", { lineHeight: "1", letterSpacing: "0.05em", fontWeight: "600" }],
+      "headline-lg": ["40px", { lineHeight: "1.2", letterSpacing: "-0.01em", fontWeight: "700" }],
+      "headline-md": ["24px", { lineHeight: "1.3", fontWeight: "700" }],
+      "display-lg": ["64px", { lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "800" }]
+    }
+  } }
+}
+</script>
+<style>
+.btn-hover-volt:hover { background-color: #caf300 !important; color: #000000 !important; }
+</style>
+</head>
+<body class="bg-background text-on-background selection:bg-secondary-fixed selection:text-primary overflow-x-hidden">
+
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-desktop h-20 bg-surface-container-lowest border-b border-outline-variant shadow-sm transition-all duration-300">
+  <div class="flex items-center gap-8">
+    <a class="font-headline-md text-headline-md font-black italic tracking-tighter text-primary" href="./">S7 SPORTS</a>
+    <div class="hidden md:flex items-center gap-6">
+      <a class="font-body-md text-body-md text-primary font-bold hover:text-secondary transition-colors" href="./shop">Shop</a>
+      <a class="font-body-md text-body-md text-primary font-bold hover:text-secondary transition-colors" href="./cart">Cart</a>
+    </div>
+  </div>
+  <div class="flex items-center gap-4">
+    <a href="./cart" class="material-symbols-outlined text-primary hover:scale-110 transition-transform relative">
+      shopping_cart
+      <span class="cart-badge absolute -top-2 -right-2 bg-secondary-fixed text-primary text-[10px] font-bold px-1.5 py-0.5 rounded-full" style="display:none">0</span>
+    </a>
+  </div>
+</nav>
+
+<section class="bg-primary pt-28 pb-12">
+  <div class="container mx-auto px-margin-mobile md:px-margin-desktop">
+    <h1 class="font-display-lg text-[48px] md:text-display-lg leading-tight text-surface-container-lowest">
+      ABOUT <span class="text-secondary-fixed italic">US</span>
+    </h1>
+    <p class="font-body-lg text-body-lg text-primary-fixed-dim mt-2">Premium cricket equipment for the modern athlete</p>
+  </div>
+</section>
+
+<section class="py-12 md:py-16">
+  <div class="container mx-auto px-margin-mobile md:px-margin-desktop max-w-4xl">
+    <div class="bg-surface-container-lowest rounded-xl border border-outline-variant p-6 md:p-10 space-y-6">
+      <p class="font-body-lg text-body-lg text-on-surface leading-relaxed">
+        S7 Sports is a Pakistan-based cricket equipment brand built for players who take their game seriously. From bats and pads to gloves and accessories, we source and deliver premium-quality gear at honest prices.
+      </p>
+      <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+        Based in Rawalpindi/Islamabad, we ship across Pakistan with cash on delivery. Whether you're a club cricketer or an aspiring professional, S7 Sports has the equipment to elevate your performance.
+      </p>
+      <div class="border-t border-outline-variant pt-6">
+        <h3 class="font-headline-md text-lg mb-3">Why S7 Sports?</h3>
+        <ul class="space-y-3">
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-secondary-fixed text-lg mt-0.5">verified</span>
+            <span class="text-sm text-on-surface-variant"><strong class="text-on-surface">Quality First</strong> — Every product is vetted for durability and performance</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-secondary-fixed text-lg mt-0.5">local_shipping</span>
+            <span class="text-sm text-on-surface-variant"><strong class="text-on-surface">Pan-Pakistan Delivery</strong> — Local rates for twin cities, affordable outstation shipping</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-secondary-fixed text-lg mt-0.5">payments</span>
+            <span class="text-sm text-on-surface-variant"><strong class="text-on-surface">Cash on Delivery</strong> — Pay only when you receive your order</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-secondary-fixed text-lg mt-0.5">support</span>
+            <span class="text-sm text-on-surface-variant"><strong class="text-on-surface">Customer Support</strong> — Reach us via WhatsApp or email for any queries</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="w-full py-12 px-margin-desktop flex flex-col md:flex-row justify-between items-start gap-gutter bg-primary mt-12">
+  <div class="flex flex-col gap-6 md:w-1/3">
+    <span class="font-headline-lg text-headline-lg font-black italic text-secondary-fixed">S7 SPORTS</span>
+    <p class="font-body-md text-primary-fixed-dim max-w-xs">Premium cricket equipment engineered for the modern athlete.</p>
+  </div>
+  <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+    <div class="flex flex-col gap-3">
+      <span class="font-label-bold text-secondary-fixed text-xs tracking-widest uppercase mb-2">Shop</span>
+      <a class="font-body-md text-primary-fixed-dim hover:text-secondary-fixed" href="./shop">Bats</a>
+      <a class="font-body-md text-primary-fixed-dim hover:text-secondary-fixed" href="./shop">Protective</a>
+    </div>
+    <div class="flex flex-col gap-3">
+      <span class="font-label-bold text-secondary-fixed text-xs tracking-widest uppercase mb-2">Service</span>
+      <a class="font-body-md text-primary-fixed-dim hover:text-secondary-fixed" href="./order-status">Track Order</a>
+      <a class="font-body-md text-primary-fixed-dim hover:text-secondary-fixed" href="./contact">Contact Us</a>
+    </div>
+    <div class="flex flex-col gap-3">
+      <span class="font-label-bold text-secondary-fixed text-xs tracking-widest uppercase mb-2">Info</span>
+      <a class="font-body-md text-primary-fixed-dim hover:text-secondary-fixed" href="./about">About Us</a>
+      <a class="font-body-md text-primary-fixed-dim hover:text-secondary-fixed" href="./privacy">Privacy</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+window.onscroll = function() {
+  const nav = document.querySelector('nav');
+  if (window.scrollY > 50) {
+    nav.classList.add('h-16', 'bg-surface-container-lowest/90', 'backdrop-blur-md');
+    nav.classList.remove('h-20');
+  } else {
+    nav.classList.add('h-20');
+    nav.classList.remove('h-16', 'bg-surface-container-lowest/90', 'backdrop-blur-md');
+  }
+};
+</script>
+<script type="module" src="./js/main.js"></script>
+</body>
+</html>

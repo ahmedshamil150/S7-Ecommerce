@@ -1,1 +1,110 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Thank You - S7 Sports</title></head><body>Contact success placeholder</body></html>
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Thank You - S7 SPORTS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&amp;family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link rel="icon" type="image/svg+xml" href="./public/favicon.svg" />
+<script>
+tailwind.config = {
+  darkMode: "class",
+  theme: { extend: {
+    colors: {
+      "surface-container": "#edeef0", "tertiary-container": "#00174b",
+      "secondary-fixed": "#caf300", "primary-fixed-dim": "#c6c6ca",
+      "error-container": "#ffdad6", "on-primary": "#ffffff",
+      "on-primary-container": "#838487", "surface-variant": "#e1e2e4",
+      "outline-variant": "#c6c6ca", "primary-fixed": "#e2e2e6",
+      "primary": "#000000", "on-primary-fixed-variant": "#45474a",
+      "surface-bright": "#f8f9fb", "on-tertiary-fixed-variant": "#003ea8",
+      "tertiary-fixed": "#dbe1ff", "on-surface": "#191c1e",
+      "on-secondary-fixed": "#171e00", "on-secondary": "#ffffff",
+      "tertiary": "#000000", "surface-container-lowest": "#ffffff",
+      "inverse-on-surface": "#f0f1f3", "surface-dim": "#d9dadc",
+      "secondary": "#536600", "on-primary-fixed": "#1a1c1f",
+      "surface-tint": "#5d5e62", "surface-container-low": "#f3f4f6",
+      "on-surface-variant": "#45474a", "error": "#ba1a1a",
+      "secondary-fixed-dim": "#b0d500", "surface-container-highest": "#e1e2e4",
+      "on-secondary-container": "#576a00", "background": "#f8f9fb",
+      "on-background": "#191c1e", "outline": "#76777b",
+      "inverse-surface": "#2e3132", "secondary-container": "#c7ef00",
+      "surface": "#f8f9fb", "on-secondary-fixed-variant": "#3e4c00",
+      "inverse-primary": "#c6c6ca", "primary-container": "#1a1c1f",
+      "tertiary-fixed-dim": "#b4c5ff", "surface-container-high": "#e7e8ea",
+      "on-tertiary-fixed": "#00174b", "on-tertiary": "#ffffff",
+      "on-tertiary-container": "#487cff"
+    },
+    borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px" },
+    spacing: { "margin-mobile": "16px", "container-max": "1280px", "margin-desktop": "48px", "gutter": "24px", "base": "8px" },
+    fontFamily: { "body-lg": ["Inter"], "body-md": ["Inter"], "label-bold": ["Inter"], "headline-lg": ["Montserrat"], "headline-md": ["Montserrat"], "display-lg": ["Montserrat"] },
+    fontSize: {
+      "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+      "body-md": ["16px", { lineHeight: "1.5", fontWeight: "400" }],
+      "label-bold": ["14px", { lineHeight: "1", letterSpacing: "0.05em", fontWeight: "600" }],
+      "headline-lg": ["40px", { lineHeight: "1.2", letterSpacing: "-0.01em", fontWeight: "700" }],
+      "headline-md": ["24px", { lineHeight: "1.3", fontWeight: "700" }],
+      "display-lg": ["64px", { lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "800" }]
+    }
+  } }
+}
+</script>
+<style>
+.btn-hover-volt:hover { background-color: #caf300 !important; color: #000000 !important; }
+</style>
+</head>
+<body class="bg-background text-on-background selection:bg-secondary-fixed selection:text-primary overflow-x-hidden">
+
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-desktop h-20 bg-surface-container-lowest border-b border-outline-variant shadow-sm transition-all duration-300">
+  <div class="flex items-center gap-8">
+    <a class="font-headline-md text-headline-md font-black italic tracking-tighter text-primary" href="./">S7 SPORTS</a>
+    <div class="hidden md:flex items-center gap-6">
+      <a class="font-body-md text-body-md text-primary font-bold hover:text-secondary transition-colors" href="./shop">Shop</a>
+      <a class="font-body-md text-body-md text-primary font-bold hover:text-secondary transition-colors" href="./cart">Cart</a>
+    </div>
+  </div>
+  <div class="flex items-center gap-4">
+    <a href="./cart" class="material-symbols-outlined text-primary hover:scale-110 transition-transform relative">
+      shopping_cart
+      <span class="cart-badge absolute -top-2 -right-2 bg-secondary-fixed text-primary text-[10px] font-bold px-1.5 py-0.5 rounded-full" style="display:none">0</span>
+    </a>
+  </div>
+</nav>
+
+<section class="min-h-screen flex items-center justify-center bg-background pt-20">
+  <div class="text-center px-margin-mobile max-w-md">
+    <span class="material-symbols-outlined text-7xl text-secondary-fixed mb-4">check_circle</span>
+    <h1 class="font-headline-md text-2xl md:text-3xl text-on-surface mb-3">Message Sent!</h1>
+    <p class="text-on-surface-variant text-sm mb-8">Thank you for reaching out. We'll get back to you within 24 hours.</p>
+    <a href="./" class="inline-block bg-primary text-white px-8 py-3 font-semibold text-sm rounded-lg btn-hover-volt transition-all">Back to Home</a>
+  </div>
+</section>
+
+<footer class="w-full py-12 px-margin-desktop flex flex-col md:flex-row justify-between items-start gap-gutter bg-primary">
+  <div class="flex flex-col gap-6 md:w-1/3">
+    <span class="font-headline-lg text-headline-lg font-black italic text-secondary-fixed">S7 SPORTS</span>
+    <p class="font-body-md text-primary-fixed-dim max-w-xs">Premium cricket equipment engineered for the modern athlete.</p>
+  </div>
+  <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+    <div class="flex flex-col gap-3">
+      <span class="font-label-bold text-secondary-fixed text-xs tracking-widest uppercase mb-2">Shop</span>
+      <a class="font-body-md text-primary-fixed-dim hover:text-secondary-fixed" href="./shop">Bats</a>
+      <a class="font-body-md text-primary-fixed-dim hover:text-secondary-fixed" href="./shop">Protective</a>
+    </div>
+    <div class="flex flex-col gap-3">
+      <span class="font-label-bold text-secondary-fixed text-xs tracking-widest uppercase mb-2">Service</span>
+      <a class="font-body-md text-primary-fixed-dim hover:text-secondary-fixed" href="./order-status">Track Order</a>
+      <a class="font-body-md text-primary-fixed-dim hover:text-secondary-fixed" href="./contact">Contact Us</a>
+    </div>
+    <div class="flex flex-col gap-3">
+      <span class="font-label-bold text-secondary-fixed text-xs tracking-widest uppercase mb-2">Info</span>
+      <a class="font-body-md text-primary-fixed-dim hover:text-secondary-fixed" href="./about">About Us</a>
+      <a class="font-body-md text-primary-fixed-dim hover:text-secondary-fixed" href="./privacy">Privacy</a>
+    </div>
+  </div>
+</footer>
+
+<script type="module" src="./js/main.js"></script>
+</body>
+</html>
