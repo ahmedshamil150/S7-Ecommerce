@@ -1,264 +1,399 @@
 <!DOCTYPE html>
-<html class="scroll-smooth" lang="en"><head>
+<html class="light" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="preconnect" href="https://cdn.tailwindcss.com" />
-<link rel="icon" type="image/svg+xml" href="./public/favicon.svg" />
-<meta property="og:title" content="S7 Sports | Premium Cricket Equipment in Pakistan" />
-<meta property="og:description" content="Shop the best cricket bats, balls, pads, gloves, helmets, bags and full kits. Premium quality cricket gear across Pakistan." />
-<meta property="og:type" content="website" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="S7 Sports | Premium Cricket Equipment" />
-<meta name="twitter:description" content="Shop the best cricket bats, balls, pads, gloves, helmets, bags and full kits." />
-<title>S7 Sports | Premium Cricket Equipment in Pakistan</title>
+<title>S7 SPORTS | Engineered for Elite Performance</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@600;700;800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&amp;family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link rel="icon" type="image/svg+xml" href="./public/favicon.svg" />
 <script id="tailwind-config">
 tailwind.config = {
-  theme: { extend: {
-    colors: {
-      primary: "#0F5E3A", "primary-dark": "#0A4027", "primary-light": "#1A8A55",
-      gold: "#D4AF37", "gold-light": "#E8C84A",
-      cream: "#F8F6F0", "cream-dark": "#EFECE4",
-      charcoal: "#1A1A1A", "gray-text": "#5A5A5A", "gray-light": "#9CA3AF",
-      surface: "#F8F6F0", "surface-card": "#FFFFFF",
+  darkMode: "class",
+  theme: {
+    extend: {
+      "colors": {
+        "surface-container": "#edeef0",
+        "tertiary-container": "#00174b",
+        "secondary-fixed": "#caf300",
+        "primary-fixed-dim": "#c6c6ca",
+        "error-container": "#ffdad6",
+        "on-error": "#ffffff",
+        "on-primary": "#ffffff",
+        "on-primary-container": "#838487",
+        "surface-variant": "#e1e2e4",
+        "outline-variant": "#c6c6ca",
+        "primary-fixed": "#e2e2e6",
+        "primary": "#000000",
+        "on-primary-fixed-variant": "#45474a",
+        "surface-bright": "#f8f9fb",
+        "on-tertiary-fixed-variant": "#003ea8",
+        "tertiary-fixed": "#dbe1ff",
+        "on-surface": "#191c1e",
+        "on-secondary-fixed": "#171e00",
+        "on-secondary": "#ffffff",
+        "tertiary": "#000000",
+        "surface-container-lowest": "#ffffff",
+        "inverse-on-surface": "#f0f1f3",
+        "on-error-container": "#93000a",
+        "surface-dim": "#d9dadc",
+        "secondary": "#536600",
+        "on-primary-fixed": "#1a1c1f",
+        "surface-tint": "#5d5e62",
+        "surface-container-low": "#f3f4f6",
+        "on-surface-variant": "#45474a",
+        "error": "#ba1a1a",
+        "secondary-fixed-dim": "#b0d500",
+        "surface-container-highest": "#e1e2e4",
+        "on-secondary-container": "#576a00",
+        "background": "#f8f9fb",
+        "on-background": "#191c1e",
+        "outline": "#76777b",
+        "inverse-surface": "#2e3132",
+        "secondary-container": "#c7ef00",
+        "surface": "#f8f9fb",
+        "on-secondary-fixed-variant": "#3e4c00",
+        "inverse-primary": "#c6c6ca",
+        "primary-container": "#1a1c1f",
+        "tertiary-fixed-dim": "#b4c5ff",
+        "surface-container-high": "#e7e8ea",
+        "on-tertiary-fixed": "#00174b",
+        "on-tertiary": "#ffffff",
+        "on-tertiary-container": "#487cff"
+      },
+      "borderRadius": {
+        "DEFAULT": "0.25rem",
+        "lg": "0.5rem",
+        "xl": "0.75rem",
+        "full": "9999px"
+      },
+      "spacing": {
+        "margin-mobile": "16px",
+        "container-max": "1280px",
+        "margin-desktop": "48px",
+        "gutter": "24px",
+        "base": "8px"
+      },
+      "fontFamily": {
+        "body-lg": ["Inter"],
+        "body-md": ["Inter"],
+        "label-bold": ["Inter"],
+        "headline-lg": ["Montserrat"],
+        "headline-md": ["Montserrat"],
+        "display-lg": ["Montserrat"],
+        "headline-lg-mobile": ["Montserrat"]
+      },
+      "fontSize": {
+        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+        "label-bold": ["14px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+        "headline-lg": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "700"}],
+        "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+        "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}]
+      }
     },
-    borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "1rem", full: "9999px" },
-    fontFamily: { body: ["Inter", "sans-serif"], heading: ["Outfit", "sans-serif"] },
-  } }
-};
+  },
+}
 </script>
 <style>
-.material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
-html{scroll-behavior:smooth}
+.skew-bg { transform: skewX(-12deg); }
+.skew-content { transform: skewX(12deg); }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+.btn-hover-volt:hover { background-color: #caf300 !important; color: #000000 !important; }
+.card-transition { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+.card-transition:hover { transform: scale(1.02); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); }
 .fade-in{opacity:0;transition:opacity .6s ease-out,transform .6s ease-out}.fade-in.visible{opacity:1}
 .fade-in-up{opacity:0;transform:translateY(24px);transition:opacity .6s ease-out,transform .6s ease-out}.fade-in-up.visible{opacity:1;transform:translateY(0)}
-.stagger>*{opacity:0;transform:translateY(24px);transition:opacity .5s ease-out,transform .5s ease-out}.stagger.visible>*{opacity:1;transform:translateY(0)}.stagger.visible>*:nth-child(1){transition-delay:.05s}.stagger.visible>*:nth-child(2){transition-delay:.1s}.stagger.visible>*:nth-child(3){transition-delay:.15s}.stagger.visible>*:nth-child(4){transition-delay:.2s}.stagger.visible>*:nth-child(5){transition-delay:.25s}.stagger.visible>*:nth-child(6){transition-delay:.3s}
-.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease-out,transform .6s ease-out}.reveal.visible{opacity:1;transform:translateY(0)}
-.product-card{transition:transform .4s cubic-bezier(.4,0,.2,1),box-shadow .4s ease}
-.product-card:hover{transform:translateY(-6px);box-shadow:0 12px 40px rgba(15,94,58,.12)}
-.product-card .img-wrap{overflow:hidden;border-radius:.5rem .5rem 0 0}
+.stagger>*{opacity:0;transform:translateY(24px);transition:opacity .5s ease-out,transform .5s ease-out}.stagger.visible>*{opacity:1;transform:translateY(0)}.stagger.visible>*:nth-child(1){transition-delay:.05s}.stagger.visible>*:nth-child(2){transition-delay:.1s}.stagger.visible>*:nth-child(3){transition-delay:.15s}.stagger.visible>*:nth-child(4){transition-delay:.2s}.stagger.visible>*:nth-child(5){transition-delay:.25s}
+.product-card{transition:all .3s cubic-bezier(0.4,0,0.2,1)}.product-card:hover{transform:scale(1.02);box-shadow:0 20px 25px -5px rgba(0,0,0,0.1),0 10px 10px -5px rgba(0,0,0,0.04)}
+.product-card .img-wrap{overflow:hidden}
 .product-card img{transition:transform .5s ease}
 .product-card:hover img{transform:scale(1.08)}
-.nav-link{position:relative}.nav-link::after{content:"";position:absolute;bottom:-2px;left:0;width:0;height:2px;background:#D4AF37;transition:width .3s ease}.nav-link:hover::after{width:100%}
-.btn-primary{display:inline-flex;align-items:center;gap:.5rem;background:#0F5E3A;color:#fff;padding:.75rem 2rem;border-radius:9999px;font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;text-decoration:none;overflow:hidden;position:relative;transition:all .3s ease}
-.btn-primary:hover{background:#0A4027;transform:translateY(-2px);box-shadow:0 8px 25px rgba(15,94,58,.3)}
-.btn-outline{display:inline-flex;align-items:center;gap:.5rem;border:2px solid #0F5E3A;color:#0F5E3A;padding:.7rem 2rem;border-radius:9999px;font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;text-decoration:none;transition:all .3s ease}
-.btn-outline:hover{background:#0F5E3A;color:#fff}
-#nav-menu{position:fixed;top:0;left:-300px;width:280px;height:100%;background:#fff;z-index:9998;box-shadow:4px 0 30px rgba(0,0,0,.1);transition:left .35s cubic-bezier(.4,0,.2,1);overflow-y:auto;display:flex;flex-direction:column;padding:5rem 2rem 2rem}
-#nav-menu.open{left:0}
-#nav-overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:9997;opacity:0;pointer-events:none;transition:opacity .35s ease}
-#nav-overlay.open{opacity:1;pointer-events:auto}
 </style>
 </head>
-<body class="bg-cream text-charcoal font-body overflow-x-hidden">
+<body class="bg-background text-on-background selection:bg-secondary-fixed selection:text-primary overflow-x-hidden">
 
-<header id="site-header" class="bg-white/90 backdrop-blur-md shadow-sm fixed top-0 w-full z-50 transition-all duration-300">
-<nav class="flex justify-between items-center px-4 md:px-16 py-3 relative">
-<button class="md:hidden active:scale-95 transition-transform" id="burger">
-<span class="material-symbols-outlined text-primary">menu</span>
-</button>
-<a href="./" class="flex items-center absolute left-1/2 -translate-x-1/2 md:static md:left-auto md:translate-x-0">
-<span class="text-primary font-heading text-xl md:text-2xl font-extrabold tracking-tight">S7<span class="text-gold">SPORTS</span></span>
-</a>
-<div class="hidden md:flex gap-8 items-center">
-<a class="nav-link font-medium text-sm text-gray-text hover:text-primary transition-colors" href="./">Home</a>
-<a class="nav-link font-medium text-sm text-gray-text hover:text-primary transition-colors" href="./shop">Shop</a>
-<a class="nav-link font-medium text-sm text-gray-text hover:text-primary transition-colors" href="./about">About</a>
-<a class="nav-link font-medium text-sm text-gray-text hover:text-primary transition-colors" href="./contact">Contact</a>
-<a class="nav-link font-medium text-sm text-gray-text hover:text-primary transition-colors" href="./order-status">Track Order</a>
-</div>
-<div class="flex items-center gap-3">
-<a href="./shop" class="text-gray-text hover:text-primary active:scale-95 transition-all"><span class="material-symbols-outlined">search</span></a>
-<a href="./wishlist" class="relative text-gray-text hover:text-primary active:scale-95 transition-all">
-<span class="material-symbols-outlined">favorite</span>
-<span class="wishlist-badge absolute -top-1 -right-1 bg-gold text-[10px] text-white rounded-full w-4 h-4 flex items-center justify-center font-bold" style="display:none;">0</span>
-</a>
-<a href="./cart" class="relative text-gray-text hover:text-primary active:scale-95 transition-all">
-<span class="material-symbols-outlined">shopping_bag</span>
-<span class="cart-badge absolute -top-1 -right-1 bg-gold text-[10px] text-white rounded-full w-4 h-4 flex items-center justify-center font-bold" style="display:none;">0</span>
-</a>
-</div>
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-desktop h-20 bg-surface-container-lowest dark:bg-primary-container border-b border-outline-variant shadow-sm transition-all duration-300">
+  <div class="flex items-center gap-8">
+    <a class="font-headline-md text-headline-md font-black italic tracking-tighter text-primary dark:text-primary-fixed" href="./">S7 SPORTS</a>
+    <div class="hidden md:flex items-center gap-6">
+      <a class="font-body-md text-body-md text-primary dark:text-secondary-fixed font-bold border-b-2 border-secondary-fixed hover:text-secondary transition-colors duration-200" href="./shop">Bats</a>
+      <a class="font-body-md text-body-md text-on-surface-variant dark:text-primary-fixed-dim hover:text-secondary transition-colors duration-200" href="./shop">Protective</a>
+      <a class="font-body-md text-body-md text-on-surface-variant dark:text-primary-fixed-dim hover:text-secondary transition-colors duration-200" href="./shop">Footwear</a>
+      <a class="font-body-md text-body-md text-on-surface-variant dark:text-primary-fixed-dim hover:text-secondary transition-colors duration-200" href="./shop">Apparel</a>
+    </div>
+  </div>
+  <div class="flex items-center gap-4">
+    <div class="hidden lg:flex relative">
+      <input class="bg-surface-container-low border-none rounded-lg px-4 py-2 w-64 focus:ring-2 focus:ring-secondary-fixed text-body-md" placeholder="Search elite gear..." type="text"/>
+      <span class="material-symbols-outlined absolute right-3 top-2 text-on-surface-variant">search</span>
+    </div>
+    <div class="flex items-center gap-4">
+      <a href="./admin/login" class="material-symbols-outlined text-primary dark:text-primary-fixed hover:scale-110 transition-transform">person</a>
+      <a href="./wishlist" class="material-symbols-outlined text-primary dark:text-primary-fixed hover:scale-110 transition-transform relative">
+        favorite
+        <span class="wishlist-badge absolute -top-2 -right-2 bg-secondary-fixed text-primary text-[10px] font-bold px-1.5 py-0.5 rounded-full" style="display:none">0</span>
+      </a>
+      <a href="./cart" class="material-symbols-outlined text-primary dark:text-primary-fixed hover:scale-110 transition-transform relative">
+        shopping_cart
+        <span class="cart-badge absolute -top-2 -right-2 bg-secondary-fixed text-primary text-[10px] font-bold px-1.5 py-0.5 rounded-full" style="display:none">0</span>
+      </a>
+    </div>
+  </div>
 </nav>
+
+<!-- Hero Section -->
+<header class="relative w-full h-[90vh] md:h-screen flex items-center overflow-hidden bg-primary mt-20 md:mt-0">
+  <div class="absolute inset-0 z-0">
+    <div class="w-full h-full bg-cover bg-center opacity-70" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBQOfh494ZKy1-18jOk6U8rpNLBBvWoCjIWZVrZWJR1iiT-y2wrQmVPKWWy9RWBJE--BysIV-L-rROKEHxr1K5hdJM7gQOs2yZ9N8o0WIUmtLXtsX7UTr4DorKNY5vQY-fyJFHFIwB1stwjVuyFuQTSWOo3aL67jOi4ADnytfa3MxISM6XY_H3OPCZ_Lvf2ScIl2-JkOCTwPtcXYexZk5tNgsB9QitryismC5P5bzBcLn-w-7lEaTyFwAQ4PygzU4r_kRYSUzdplHrW')"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-primary via-primary/40 to-transparent"></div>
+  </div>
+  <div class="container mx-auto px-margin-mobile md:px-margin-desktop relative z-10">
+    <div class="max-w-3xl">
+      <img alt="S7 Logo" class="h-16 md:h-24 mb-8 invert filter" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA36VhuqQ9j4qGqobDqt6yFM_fdxjADH7Q4dTXoi7YQzrqlYnfdM-wbko3rN9HcGG0SJGhYghPAH9RQQSxKSH4fjpLLuN3kPZuV1ilnjXT3lIQI4UsA2Lz8Xtx30kEBV3OIkPDMjILdSE8AzXGchmox89YA-jR79nEvR8jYHAyUgnWhSw0Y9HQsUGnQmdS_suqzWPV-bSD50zOcJEq6-fim6cJmNYoXGObm8MoQX_E3ppYw4PziWx1yi4P8zVmF07lEvCS8rHTczAJs"/>
+      <h1 class="font-display-lg text-[48px] md:text-display-lg leading-tight text-surface-container-lowest mb-6">
+        ENGINEERED FOR <br/><span class="text-secondary-fixed italic">ELITE PERFORMANCE.</span>
+      </h1>
+      <p class="font-body-lg text-body-lg text-primary-fixed-dim mb-10 max-w-xl">
+        Experience the pinnacle of craftsmanship. Our Grade 1 English Willow bats are handcrafted for explosive power and surgical precision.
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <a href="./shop" class="bg-surface-container-lowest text-primary px-8 py-4 font-label-bold text-label-bold rounded-lg btn-hover-volt transition-all uppercase tracking-widest flex items-center gap-2">
+          Shop Collection <span class="material-symbols-outlined">trending_flat</span>
+        </a>
+        <a href="./shop" class="border-2 border-surface-container-lowest text-surface-container-lowest px-8 py-4 font-label-bold text-label-bold rounded-lg hover:bg-surface-container-lowest hover:text-primary transition-all uppercase tracking-widest">
+          The Bat Lab
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-surface-container-lowest/50">
+    <span class="text-[10px] font-bold uppercase tracking-widest">Scroll</span>
+    <div class="w-[2px] h-12 bg-gradient-to-b from-secondary-fixed to-transparent rounded-full animate-bounce"></div>
+  </div>
 </header>
 
-<div id="nav-overlay"></div>
-<div id="nav-menu">
-<a class="block font-medium text-gray-text hover:text-primary py-2 transition-colors" href="./">Home</a>
-<a class="block font-medium text-gray-text hover:text-primary py-2 transition-colors" href="./shop">Shop</a>
-<a class="block font-medium text-gray-text hover:text-primary py-2 transition-colors" href="./about">About</a>
-<a class="block font-medium text-gray-text hover:text-primary py-2 transition-colors" href="./contact">Contact</a>
-<a class="block font-medium text-gray-text hover:text-primary py-2 transition-colors" href="./order-status">Track Order</a>
-</div>
-
-<main>
-<!-- Hero Section -->
-<section class="relative h-[90vh] md:h-screen flex items-center overflow-hidden">
-<div class="absolute inset-0 z-0">
-<div class="w-full h-full bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1531415074968-036ba1b575da?q=80&w=2067&auto=format&fit=crop')"></div>
-<div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent"></div>
-</div>
-<div class="container mx-auto px-4 md:px-16 relative z-10">
-<div class="max-w-xl fade-in-up">
-<span class="text-gold font-heading text-sm md:text-base tracking-[.2em] uppercase block mb-4">Premium Cricket Equipment</span>
-<h1 class="font-heading text-4xl md:text-7xl font-extrabold text-white mb-6 leading-tight">Gear Up for <span class="text-gold">Victory</span></h1>
-<p class="text-white/80 text-base md:text-lg mb-8 max-w-lg leading-relaxed">Top-quality cricket bats, balls, pads, gloves, helmets, and full kits. Trusted by players across Pakistan.</p>
-<div class="flex flex-wrap gap-4">
-<a class="btn-primary" href="./shop">Shop Now</a>
-<a class="btn-outline !border-white !text-white hover:!bg-white hover:!text-primary" href="./shop">Explore Collection</a>
-</div>
-</div>
-</div>
-<div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex-col items-center gap-2 text-white/50 hidden md:flex">
-<span class="text-[10px] font-medium tracking-widest uppercase">Scroll</span>
-<div class="w-[1px] h-12 bg-white/20 relative overflow-hidden">
-<div class="absolute top-0 left-0 w-full h-1/2 bg-gold animate-bounce"></div>
-</div>
-</div>
+<!-- Collections Bento Grid -->
+<section class="py-24 px-margin-mobile md:px-margin-desktop container mx-auto">
+  <div class="flex items-end justify-between mb-12">
+    <div>
+      <span class="text-secondary-fixed font-black tracking-widest uppercase text-xs bg-primary px-3 py-1 skew-bg inline-block">
+        <span class="skew-content">EQUIPMENT CATEGORIES</span>
+      </span>
+      <h2 class="font-headline-lg text-headline-lg mt-4">CHOOSE YOUR WEAPON</h2>
+    </div>
+    <a class="hidden md:flex items-center gap-2 font-label-bold text-on-surface-variant hover:text-primary transition-colors" href="./shop">
+      View All Categories <span class="material-symbols-outlined">arrow_right_alt</span>
+    </a>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-6 h-[800px]">
+    <div class="md:col-span-2 md:row-span-2 relative group overflow-hidden rounded-xl border border-outline-variant cursor-pointer">
+      <a href="./shop" class="block w-full h-full">
+        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBt-J-kTZjxLIWTu1jq20OwrC0KZh3DK8lVXWui5rJWusOoSj8bhOGrfPORIQcmXqMXZ-2KnSBY0_C3Wpqz9_7kfRjK9Gmz7GyD_FBzepYgI42frPhTmWwubw9VBbGYSTm0wHzhlDSc02qnltJri_29NH9hQjTCdU5o5zudTk_spiWOLdZM0tswp7rLMCCxW0KdVHseNXDUFgHqeMu1_XFMRWNYIkHOSeCphVSeVMIFmMFmmWdEJ5PsMYQBLZ92KxbMSbvwJLTWOTnm')"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent"></div>
+        <div class="absolute bottom-8 left-8">
+          <h3 class="font-headline-md text-surface-container-lowest text-3xl mb-2">Elite Bats</h3>
+          <p class="text-primary-fixed-dim font-body-md mb-4">Pro-grade performance willow</p>
+          <span class="bg-secondary-fixed text-primary font-label-bold px-6 py-2 rounded uppercase text-xs tracking-wider inline-block">Explore</span>
+        </div>
+      </a>
+    </div>
+    <div class="md:col-span-2 relative group overflow-hidden rounded-xl border border-outline-variant cursor-pointer">
+      <a href="./shop" class="block w-full h-full">
+        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAYjffNxx-RtNhzaGIVykkf9ti8y1pe9qjnNu0dqhYTLPWvkDaScoV-NMtY5enc1a7Q6wz-0R2o1LYHuZ8bF4ioLbgRuCuenKGWtzGFJATCqd57b3frqr5n-Xtj2e0-ZjSiWXRkVab54stC6yNrAXurQyGRP6GMy_4CQ0KDI-QiXBS_rEkLBWRYCFMkeHtZZ3U62f7XB_lJcXnpnvXqKL7orCGtLPp-dnvn3b77cjDKG-njzUT5hfl406Iwr_vAv158SgT_485Es_9-')"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent"></div>
+        <div class="absolute bottom-6 left-6">
+          <h3 class="font-headline-md text-surface-container-lowest">Protective Gear</h3>
+        </div>
+      </a>
+    </div>
+    <div class="relative group overflow-hidden rounded-xl border border-outline-variant cursor-pointer">
+      <a href="./shop" class="block w-full h-full">
+        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBSduqXCFEOgyKnbdZGzGIqX8r6mF8T9JoD8nTAItRELvDZPbmIdx8n39VIWGs3OqY9SlbC6aMEwFbIouZZH_AU2BUx0nc3SotnMRaXNQ_xv0OeEEI0Dk9426EASUGG39Q0eZtmy-MUkTicdrtnTVubGuisQ09Q6ZKIXCS_NdgKWZqyczd97JCDjob2G0kEN7uKr7wkIzRV898C5BaHdnyQeaviWzwAtN1pb0zp8t3ChS0jrhgv8wiugY1QuvcMQaw12XRjjDlolsnT')"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent"></div>
+        <div class="absolute bottom-6 left-6">
+          <h3 class="font-headline-md text-surface-container-lowest">Footwear</h3>
+        </div>
+      </a>
+    </div>
+    <div class="relative group overflow-hidden rounded-xl border border-outline-variant cursor-pointer">
+      <a href="./shop" class="block w-full h-full">
+        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCP8EGKMXsTFxXI4EALmScXeRj_SDwZczYFHugGE5alcTgl7mwLn6RqYbLa8U74c3EJ_VJwnFJ3atUl6DZrh-1RIdUnCiq3X8oL9DRFMxx8zg8upH1tpga2NncPKxHUj_xjd391XSX2Y0n5SWUuVbyA5i5cHI8KW4T5I_lNsDZTRk8IghOTtgSNby7nxfcr2Gwsn4m9F-KALe2vBdkkOrgN9RfZhAx36I4KrD4DO5z7BMxoten4w6R2_Mr9O0doLxz-9XoUygTD2BTR')"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent"></div>
+        <div class="absolute bottom-6 left-6">
+          <h3 class="font-headline-md text-surface-container-lowest">Apparel</h3>
+        </div>
+      </a>
+    </div>
+  </div>
 </section>
 
-<!-- Trust Bar -->
-<section class="bg-primary py-4">
-<div class="container mx-auto px-4 md:px-16">
-<div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-white">
-<div class="flex items-center justify-center gap-2"><span class="material-symbols-outlined text-gold">verified</span><span class="text-sm font-medium">100% Authentic</span></div>
-<div class="flex items-center justify-center gap-2"><span class="material-symbols-outlined text-gold">local_shipping</span><span class="text-sm font-medium">Pan Pakistan Delivery</span></div>
-<div class="flex items-center justify-center gap-2"><span class="material-symbols-outlined text-gold">payments</span><span class="text-sm font-medium">Cash on Delivery</span></div>
-<div class="flex items-center justify-center gap-2"><span class="material-symbols-outlined text-gold">currency_rupee</span><span class="text-sm font-medium">Best Prices</span></div>
-</div>
-</div>
+<!-- Featured Products Section -->
+<section class="py-24 px-margin-mobile md:px-margin-desktop bg-surface-container-low">
+  <div class="container mx-auto">
+    <div class="flex items-end justify-between mb-12">
+      <div>
+        <span class="text-secondary-fixed font-black tracking-widest uppercase text-xs bg-primary px-3 py-1 skew-bg inline-block">
+          <span class="skew-content">FEATURED GEAR</span>
+        </span>
+        <h2 class="font-headline-lg text-headline-lg mt-4">TOP PERFORMERS</h2>
+      </div>
+      <a class="hidden md:flex items-center gap-2 font-label-bold text-on-surface-variant hover:text-primary transition-colors" href="./shop">
+        View All Products <span class="material-symbols-outlined">arrow_right_alt</span>
+      </a>
+    </div>
+    <div id="home-product-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter stagger">
+      <div class="col-span-full text-center py-12 text-on-surface-variant animate-pulse">Loading elite gear...</div>
+    </div>
+  </div>
 </section>
 
-<!-- Featured Products -->
-<section class="py-16 md:py-24 container mx-auto px-4 md:px-16 fade-in">
-<div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4 fade-in-up">
-<div>
-<h2 class="font-heading text-2xl md:text-4xl font-bold text-primary">Featured Products</h2>
-<div class="h-1 w-20 bg-gold mt-2"></div>
-</div>
-<a class="text-sm font-semibold text-primary hover:text-gold transition-colors border-b border-gold/30 pb-1" href="./shop">View All Products →</a>
-</div>
-<div id="home-product-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4 stagger"></div>
+<!-- Pro's Choice Section -->
+<section class="py-24 relative overflow-hidden">
+  <div class="container mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+    <div class="relative">
+      <div class="absolute -top-10 -left-10 w-40 h-40 border-8 border-secondary-fixed/20 skew-bg"></div>
+      <div class="w-full aspect-square rounded-2xl bg-cover bg-center shadow-2xl relative z-10" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDOMjX1arHmQzFeqkadro4uRMU6qBBgHojCbpmDKvnZaJjCORt_x3CCMJy5Lt6k0ZLDqrGoYx0xk67UUf5mrmTZsABAeckbn8iRwFRR6EHdYcmGRSLj4YPydUw-4fXQGw1EkWBBO83tjM5ARYH0IzxA5wjAXndtRqoYuG3R4sNE48FjmysRe-fPpV65PtLYnsLsOCFKU7Y6BNeR3ss1Xm_5YI0ASIEZJhoJXAhLHLu4eJfuXnb6eVXL0-CCDE7blBZHSR2-yKz4UkPw')"></div>
+      <div class="absolute -bottom-6 -right-6 bg-primary text-secondary-fixed p-8 z-20 skew-bg">
+        <div class="skew-content">
+          <p class="font-display-lg text-5xl italic">98%</p>
+          <p class="font-label-bold uppercase tracking-widest text-xs mt-1">Player Satisfaction</p>
+        </div>
+      </div>
+    </div>
+    <div>
+      <span class="text-secondary-fixed font-black tracking-widest uppercase text-xs">Testimonial</span>
+      <h2 class="font-headline-lg text-headline-lg mt-4 mb-8 italic uppercase tracking-tighter">THE PRO'S CHOICE</h2>
+      <div class="space-y-8">
+        <div class="border-l-4 border-secondary-fixed pl-6">
+          <p class="font-body-lg text-2xl italic leading-relaxed text-on-surface mb-4">
+            "The balance on the Phantom series is unlike anything I've used before. It's a true power-player's bat without sacrificing the pickup."
+          </p>
+          <cite class="not-italic font-label-bold uppercase text-on-surface-variant tracking-widest">— MARCUS STEVENSON, PRO OPENER</cite>
+        </div>
+        <div class="grid grid-cols-2 gap-8 pt-8">
+          <div>
+            <h4 class="font-headline-md text-primary text-lg mb-2">Technical Mastery</h4>
+            <p class="font-body-md text-on-surface-variant">Each bat undergoes 15 hours of hand-pressing and finishing to ensure the perfect grain density.</p>
+          </div>
+          <div>
+            <h4 class="font-headline-md text-primary text-lg mb-2">Impact Ready</h4>
+            <p class="font-body-md text-on-surface-variant">Our protective gear uses D3O technology for superior impact absorption without the bulk.</p>
+          </div>
+        </div>
+        <a href="./shop" class="inline-block bg-primary text-white px-10 py-4 font-label-bold rounded-lg btn-hover-volt transition-all uppercase tracking-widest">
+          Shop the Pro Range
+        </a>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- Categories Preview -->
-<section class="py-16 md:py-24 bg-surface-card fade-in">
-<div class="container mx-auto px-4 md:px-16">
-<div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4 fade-in-up">
-<div>
-<h2 class="font-heading text-2xl md:text-4xl font-bold text-primary">Shop by Category</h2>
-<div class="h-1 w-20 bg-gold mt-2"></div>
-</div>
-</div>
-<div class="grid grid-cols-2 md:grid-cols-4 gap-4 stagger">
-<a href="./shop" class="group relative overflow-hidden rounded-xl bg-white shadow-sm hover:shadow-lg transition-all">
-<div class="aspect-square bg-gradient-to-br from-primary/5 to-primary/10 flex items-center justify-center p-8">
-<span class="material-symbols-outlined text-6xl text-primary/30 group-hover:scale-110 transition-transform">sports_cricket</span>
-</div>
-<div class="p-4 text-center">
-<h3 class="font-heading font-bold text-primary">Cricket Bats</h3>
-<p class="text-xs text-gray-text mt-1">English & Kashmir Willow</p>
-</div>
-</a>
-<a href="./shop" class="group relative overflow-hidden rounded-xl bg-white shadow-sm hover:shadow-lg transition-all">
-<div class="aspect-square bg-gradient-to-br from-gold/5 to-gold/10 flex items-center justify-center p-8">
-<span class="material-symbols-outlined text-6xl text-gold/30 group-hover:scale-110 transition-transform">sports_tennis</span>
-</div>
-<div class="p-4 text-center">
-<h3 class="font-heading font-bold text-primary">Cricket Balls</h3>
-<p class="text-xs text-gray-text mt-1">Leather & Practice</p>
-</div>
-</a>
-<a href="./shop" class="group relative overflow-hidden rounded-xl bg-white shadow-sm hover:shadow-lg transition-all">
-<div class="aspect-square bg-gradient-to-br from-primary/5 to-primary/10 flex items-center justify-center p-8">
-<span class="material-symbols-outlined text-6xl text-primary/30 group-hover:scale-110 transition-transform">shield</span>
-</div>
-<div class="p-4 text-center">
-<h3 class="font-heading font-bold text-primary">Pads & Guards</h3>
-<p class="text-xs text-gray-text mt-1">Batting & Wicket Keeping</p>
-</div>
-</a>
-<a href="./shop" class="group relative overflow-hidden rounded-xl bg-white shadow-sm hover:shadow-lg transition-all">
-<div class="aspect-square bg-gradient-to-br from-gold/5 to-gold/10 flex items-center justify-center p-8">
-<span class="material-symbols-outlined text-6xl text-gold/30 group-hover:scale-110 transition-transform">backpack</span>
-</div>
-<div class="p-4 text-center">
-<h3 class="font-heading font-bold text-primary">Cricket Bags</h3>
-<p class="text-xs text-gray-text mt-1">Kit Bags & Accessories</p>
-</div>
-</a>
-</div>
-</div>
+<!-- Newsletter Section -->
+<section class="bg-primary py-20 px-margin-mobile md:px-margin-desktop overflow-hidden">
+  <div class="container mx-auto relative flex flex-col md:flex-row items-center justify-between gap-12">
+    <div class="absolute inset-0 opacity-10 pointer-events-none overflow-hidden">
+      <div class="w-[200%] h-full flex gap-10 animate-[scroll_20s_linear_infinite]">
+        <span class="text-display-lg text-white font-black italic">S7 SPORTS S7 SPORTS S7 SPORTS S7 SPORTS S7 SPORTS</span>
+      </div>
+    </div>
+    <style>
+      @keyframes scroll {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+      }
+    </style>
+    <div class="relative z-10 text-center md:text-left">
+      <h3 class="font-headline-lg text-headline-lg text-secondary-fixed italic mb-2">JOIN THE S7 SQUAD</h3>
+      <p class="font-body-lg text-primary-fixed-dim">Get early access to limited drops and pro tips.</p>
+    </div>
+    <div class="relative z-10 w-full max-w-md">
+      <form class="flex gap-2">
+        <input class="flex-1 bg-surface-container-highest/20 border-2 border-primary-fixed-dim/30 rounded-lg px-6 py-4 text-surface-container-lowest placeholder:text-primary-fixed-dim/50 focus:border-secondary-fixed focus:ring-0 transition-all font-label-bold" placeholder="ENTER YOUR EMAIL" type="email"/>
+        <button class="bg-secondary-fixed text-primary px-8 py-4 font-label-bold rounded-lg hover:scale-105 active:scale-95 transition-all uppercase tracking-widest" type="submit">JOIN</button>
+      </form>
+    </div>
+  </div>
 </section>
-
-<!-- Features Section -->
-<section class="py-16 md:py-24 container mx-auto px-4 md:px-16 fade-in">
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-<div class="p-8 bg-white rounded-xl shadow-sm hover:shadow-md transition-all">
-<div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-5">
-<span class="material-symbols-outlined text-3xl text-primary">verified</span>
-</div>
-<h3 class="font-heading font-bold text-primary mb-3">Premium Quality</h3>
-<p class="text-sm text-gray-text leading-relaxed">We source only the best cricket gear from trusted brands. Every product is quality-checked before dispatch.</p>
-</div>
-<div class="p-8 bg-white rounded-xl shadow-sm hover:shadow-md transition-all">
-<div class="w-14 h-14 rounded-full bg-gold/10 flex items-center justify-center mx-auto mb-5">
-<span class="material-symbols-outlined text-3xl text-gold">local_shipping</span>
-</div>
-<h3 class="font-heading font-bold text-primary mb-3">Fast Delivery</h3>
-<p class="text-sm text-gray-text leading-relaxed">Free shipping on orders over Rs 3,000. We deliver to all major cities across Pakistan within 3-5 business days.</p>
-</div>
-<div class="p-8 bg-white rounded-xl shadow-sm hover:shadow-md transition-all">
-<div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-5">
-<span class="material-symbols-outlined text-3xl text-primary">support_agent</span>
-</div>
-<h3 class="font-heading font-bold text-primary mb-3">Customer Support</h3>
-<p class="text-sm text-gray-text leading-relaxed">Got questions? Our cricket experts are here to help you choose the right gear. WhatsApp or call us anytime.</p>
-</div>
-</div>
-</section>
-</main>
 
 <!-- Footer -->
-<footer class="bg-primary text-white pt-16">
-<div class="container mx-auto px-4 md:px-16 pb-12">
-<div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
-<div class="md:col-span-2">
-<h2 class="font-heading text-2xl font-extrabold mb-4">S7<span class="text-gold">SPORTS</span></h2>
-<p class="text-white/70 text-sm leading-relaxed max-w-sm mb-6">Pakistan's trusted online store for premium cricket equipment. From bats to bags, we've got everything you need to dominate on the pitch.</p>
-<div class="flex gap-3">
-<a class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/70 hover:bg-gold hover:text-primary hover:border-gold transition-all" href="#"><span class="material-symbols-outlined text-sm">chat</span></a>
-<a class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/70 hover:bg-gold hover:text-primary hover:border-gold transition-all" href="#"><span class="material-symbols-outlined text-sm">photo_camera</span></a>
-<a class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/70 hover:bg-gold hover:text-primary hover:border-gold transition-all" href="#"><span class="material-symbols-outlined text-sm">music_note</span></a>
-</div>
-</div>
-<div>
-<h3 class="font-heading font-bold mb-6">Quick Links</h3>
-<ul class="space-y-2 text-sm text-white/70">
-<li><a class="hover:text-gold transition-colors" href="./about">About Us</a></li>
-<li><a class="hover:text-gold transition-colors" href="./contact">Contact</a></li>
-<li><a class="hover:text-gold transition-colors" href="./order-status">Track Order</a></li>
-<li><a class="hover:text-gold transition-colors" href="./privacy">Privacy Policy</a></li>
-</ul>
-</div>
-<div>
-<h3 class="font-heading font-bold mb-6">Categories</h3>
-<ul class="space-y-2 text-sm text-white/70">
-<li><a class="hover:text-gold transition-colors" href="./shop">Cricket Bats</a></li>
-<li><a class="hover:text-gold transition-colors" href="./shop">Cricket Balls</a></li>
-<li><a class="hover:text-gold transition-colors" href="./shop">Pads & Guards</a></li>
-<li><a class="hover:text-gold transition-colors" href="./shop">Gloves</a></li>
-<li><a class="hover:text-gold transition-colors" href="./shop">Helmets & Bags</a></li>
-</ul>
-</div>
-</div>
-<div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-center">
-<p class="text-white/50 text-sm">&copy; 2026 S7 Sports. All rights reserved.</p>
-</div>
-</div>
+<footer class="w-full py-12 px-margin-desktop flex flex-col md:flex-row justify-between items-start gap-gutter bg-primary mt-12">
+  <div class="flex flex-col gap-6 md:w-1/3">
+    <span class="font-headline-lg text-headline-lg font-black italic text-secondary-fixed">S7 SPORTS</span>
+    <p class="font-body-md text-primary-fixed-dim max-w-xs">
+      Premium cricket equipment engineered for the modern athlete. High performance, zero compromise.
+    </p>
+    <div class="flex gap-4">
+      <a class="w-10 h-10 rounded-full border border-primary-fixed-dim/30 flex items-center justify-center text-secondary-fixed hover:border-secondary-fixed transition-colors" href="#">
+        <svg class="w-5 h-5 fill-current" viewbox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path></svg>
+      </a>
+      <a class="w-10 h-10 rounded-full border border-primary-fixed-dim/30 flex items-center justify-center text-secondary-fixed hover:border-secondary-fixed transition-colors" href="#">
+        <svg class="w-5 h-5 fill-current" viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
+      </a>
+    </div>
+  </div>
+  <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+    <div class="flex flex-col gap-3">
+      <span class="font-label-bold text-secondary-fixed text-xs tracking-widest uppercase mb-2">Shop</span>
+      <a class="font-body-md text-primary-fixed-dim hover:text-secondary-fixed transition-colors" href="./shop">Bats</a>
+      <a class="font-body-md text-primary-fixed-dim hover:text-secondary-fixed transition-colors" href="./shop">Protective</a>
+      <a class="font-body-md text-primary-fixed-dim hover:text-secondary-fixed transition-colors" href="./shop">Footwear</a>
+      <a class="font-body-md text-primary-fixed-dim hover:text-secondary-fixed transition-colors" href="./shop">Apparel</a>
+    </div>
+    <div class="flex flex-col gap-3">
+      <span class="font-label-bold text-secondary-fixed text-xs tracking-widest uppercase mb-2">Service</span>
+      <a class="font-body-md text-primary-fixed-dim hover:text-secondary-fixed transition-colors" href="./order-status">Track Order</a>
+      <a class="font-body-md text-primary-fixed-dim hover:text-secondary-fixed transition-colors" href="./contact">Contact Us</a>
+      <a class="font-body-md text-primary-fixed-dim hover:text-secondary-fixed transition-colors" href="./privacy">Privacy Policy</a>
+    </div>
+    <div class="flex flex-col gap-3">
+      <span class="font-label-bold text-secondary-fixed text-xs tracking-widest uppercase mb-2">Info</span>
+      <a class="font-body-md text-primary-fixed-dim hover:text-secondary-fixed transition-colors" href="./about">About Us</a>
+      <a class="font-body-md text-primary-fixed-dim hover:text-secondary-fixed transition-colors" href="./contact">Support</a>
+    </div>
+  </div>
 </footer>
+
+<!-- Mobile Bottom Navigation -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-16 px-4 bg-surface-container-lowest dark:bg-primary-container shadow-[0_-4px_12px_rgba(0,0,0,0.08)] rounded-t-xl">
+  <a class="flex flex-col items-center justify-center text-primary dark:text-secondary-fixed scale-110 font-label-bold text-label-bold" href="./">
+    <span class="material-symbols-outlined">home</span>
+    <span class="text-[10px]">Home</span>
+  </a>
+  <a class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 font-label-bold hover:opacity-100 transition-all" href="./shop">
+    <span class="material-symbols-outlined">sports_cricket</span>
+    <span class="text-[10px]">Shop</span>
+  </a>
+  <a class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 font-label-bold hover:opacity-100 transition-all relative" href="./cart">
+    <span class="material-symbols-outlined">shopping_bag</span>
+    <span class="cart-badge absolute -top-1 -right-1 bg-secondary-fixed text-primary text-[8px] font-bold px-1 rounded-full" style="display:none">0</span>
+    <span class="text-[10px]">Cart</span>
+  </a>
+  <a class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 font-label-bold hover:opacity-100 transition-all" href="./wishlist">
+    <span class="material-symbols-outlined">favorite</span>
+    <span class="text-[10px]">Wishlist</span>
+  </a>
+  <a class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 font-label-bold hover:opacity-100 transition-all" href="./order-status">
+    <span class="material-symbols-outlined">track_changes</span>
+    <span class="text-[10px]">Track</span>
+  </a>
+</nav>
+
+<script>
+window.onscroll = function() {
+  const nav = document.querySelector('nav');
+  if (window.scrollY > 50) {
+    nav.classList.add('h-16', 'bg-surface-container-lowest/90', 'backdrop-blur-md');
+    nav.classList.remove('h-20');
+  } else {
+    nav.classList.add('h-20');
+    nav.classList.remove('h-16', 'bg-surface-container-lowest/90', 'backdrop-blur-md');
+  }
+};
+</script>
 <script type="module" src="./js/main.js"></script>
 <script type="module" src="./js/home.js"></script>
 </body>
