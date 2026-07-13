@@ -644,7 +644,7 @@ if (ordersTable) {
     return arr.map(i => {
       const img = productImageMap[i.id] || 'https://placehold.co/40x40?text=';
       return `
-      <div style="display:flex;align-items:center;gap:8px;padding:4px 0;border-bottom:1px solid #2a2a2a;">
+      <div style="display:flex;align-items:center;gap:8px;padding:4px 0;border-bottom:1px solid #eee;">
         <img src="${img}" style="width:40px;height:40px;object-fit:cover;border-radius:4px;flex-shrink:0;" onerror="this.src='https://placehold.co/40x40?text=?'" />
         <span style="flex:1;">${esc(i.title)}${i.variant_label ? ' <span style="color:#888;">(' + esc(i.variant_label) + ')</span>' : ''} \u00d7 ${i.qty}</span>
         <span style="white-space:nowrap;">Rs ${(Number(i.price) * Number(i.qty)).toLocaleString()}</span>
@@ -731,7 +731,7 @@ if (ordersTable) {
               </td>
             </tr>
             <tr class="items-detail-row" id="items-${o.id}" style="display:none;">
-              <td colspan="9" style="padding:0.75rem 1rem;background:#1a1a1a;">
+              <td colspan="9" style="padding:0.75rem 1rem;background:#f5f5f5;">
                 <div style="font-weight:600;margin-bottom:0.5rem;color:var(--admin-volt);">Order Items</div>
                 ${renderItems(o.items)}
               </td>
@@ -1387,23 +1387,23 @@ if (heroForm) {
   function showHeroPreview(hero) {
     if (!heroCurrent) return;
     if (!hero) {
-      heroCurrent.innerHTML = '<div style="background:#121212;border-radius:12px;padding:2rem;text-align:center;border:1px solid #2a2a2a;"><p style="color:#888;">No hero image set yet. Upload one below.</p></div>';
+      heroCurrent.innerHTML = '<div style="background:#fafafa;border-radius:12px;padding:2rem;text-align:center;border:1px solid #e0e0e0;"><p style="color:#888;">No hero image set yet. Upload one below.</p></div>';
       return;
     }
     heroCurrent.innerHTML = `
-      <div style="background:#121212;border-radius:12px;padding:1.5rem;border:1px solid #2a2a2a;">
+      <div style="background:#fafafa;border-radius:12px;padding:1.5rem;border:1px solid #e0e0e0;">
         <h3 style="margin-bottom:0.75rem;font-size:1rem;color:var(--admin-volt);">Current Hero Image</h3>
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;">
           <div>
             <p style="font-size:0.82rem;color:#888;margin-bottom:0.35rem;">Desktop</p>
-            <div style="border-radius:8px;overflow:hidden;border:1px solid #2a2a2a;background:#0a0a0a;">
+            <div style="border-radius:8px;overflow:hidden;border:1px solid #e0e0e0;background:#fff;">
               <img src="${hero.image_url}" alt="Desktop hero" style="display:block;width:100%;height:auto;aspect-ratio:192/100;object-fit:cover;" />
             </div>
           </div>
           ${hero.mobile_image_url ? `
           <div>
             <p style="font-size:0.82rem;color:#888;margin-bottom:0.35rem;">Mobile</p>
-            <div style="border-radius:8px;overflow:hidden;border:1px solid #2a2a2a;background:#0a0a0a;max-width:200px;">
+            <div style="border-radius:8px;overflow:hidden;border:1px solid #e0e0e0;background:#fff;max-width:200px;">
               <img src="${hero.mobile_image_url}" alt="Mobile hero" style="display:block;width:100%;height:auto;aspect-ratio:75/133;object-fit:cover;" />
             </div>
           </div>` : ''}
@@ -1540,9 +1540,9 @@ if (invoicesTable) {
               <td>Rs ${Number(inv.total || 0).toLocaleString()}</td>
               <td>
                 <span style="padding:4px 8px;border-radius:4px;font-size:0.8rem;font-weight:600;${
-                  inv.status === 'active' ? 'background:#0d3310;color:#66bb6a;' :
-                  inv.status === 'cancelled' ? 'background:#3d0d0d;color:#ef5350;' :
-                  'background:#1a1a1a;color:#888;'
+                  inv.status === 'active' ? 'background:#d4edda;color:#155724;' :
+                  inv.status === 'cancelled' ? 'background:#f8d7da;color:#721c24;' :
+                  'background:#f0f0f0;color:#888;'
                 }">${inv.status.replace('_', ' ')}</span>
               </td>
               <td class="action-cell">
