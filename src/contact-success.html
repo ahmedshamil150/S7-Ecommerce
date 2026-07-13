@@ -63,7 +63,7 @@ tailwind.config = {
 
 <nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-desktop h-16 md:h-16 bg-surface-container-lowest border-b border-outline-variant shadow-sm transition-all duration-300">
   <div class="flex items-center gap-8">
-    <a class="flex items-center" href="./"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuA36VhuqQ9j4qGqobDqt6yFM_fdxjADH7Q4dTXoi7YQzrqlYnfdM-wbko3rN9HcGG0SJGhYghPAH9RQQSxKSH4fjpLLuN3kPZuV1ilnjXT3lIQI4UsA2Lz8Xtx30kEBV3OIkPDMjILdSE8AzXGchmox89YA-jR79nEvR8jYHAyUgnWhSw0Y9HQsUGnQmdS_suqzWPV-bSD50zOcJEq6-fim6cJmNYoXGObm8MoQX_E3ppYw4PziWx1yi4P8zVmF07lEvCS8rHTczAJs" alt="S7 Sports" class="h-8" /><span id="brand-text" class="font-headline-md text-sm font-black italic text-primary">S7 SPORTS</span></a>
+    <a class="flex items-center" href="./"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuA36VhuqQ9j4qGqobDqt6yFM_fdxjADH7Q4dTXoi7YQzrqlYnfdM-wbko3rN9HcGG0SJGhYghPAH9RQQSxKSH4fjpLLuN3kPZuV1ilnjXT3lIQI4UsA2Lz8Xtx30kEBV3OIkPDMjILdSE8AzXGchmox89YA-jR79nEvR8jYHAyUgnWhSw0Y9HQsUGnQmdS_suqzWPV-bSD50zOcJEq6-fim6cJmNYoXGObm8MoQX_E3ppYw4PziWx1yi4P8zVmF07lEvCS8rHTczAJs" alt="S7 Sports" class="h-8" /><span id="brand-text" class="font-headline-md text-sm font-black italic text-primary">S7</span></a>
     <div class="hidden md:flex items-center gap-6">
       <a class="font-body-md text-body-md text-primary font-bold hover:text-secondary transition-colors" href="./">Home</a>
       <a class="font-body-md text-body-md text-primary font-bold hover:text-secondary transition-colors" href="./shop">Shop</a>
@@ -158,14 +158,14 @@ tailwind.config = {
 window.onscroll = function() {
   const nav = document.querySelector('nav');
   if (window.scrollY > 50) {
-    nav.classList.add('rounded-full', 'shadow-lg', 'bg-white', 'backdrop-blur-md', 'h-12', 'px-4');
+    nav.classList.add('rounded-full', 'shadow-lg', 'bg-white', 'backdrop-blur-md', 'h-10', 'px-3');
     nav.classList.remove('border-b', 'border-outline-variant', 'shadow-sm', 'h-20', 'px-margin-desktop');
     nav.style.left = '15%';
     nav.style.right = '15%';
     nav.style.width = 'auto';
     nav.style.top = '12px';
   } else {
-    nav.classList.remove('rounded-full', 'shadow-lg', 'bg-white', 'backdrop-blur-md', 'h-12', 'px-4');
+    nav.classList.remove('rounded-full', 'shadow-lg', 'bg-white', 'backdrop-blur-md', 'h-10', 'px-3');
     nav.classList.add('border-b', 'border-outline-variant', 'shadow-sm', 'h-20', 'px-margin-desktop');
     nav.style.left = '';
     nav.style.right = '';
