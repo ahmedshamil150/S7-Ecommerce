@@ -9,6 +9,7 @@ import {
   getCharges, upsertCharge, deleteCharge,
   clearCache,
 } from './api.js';
+import { generateInvoice, generateDeliveryChallan } from './pdf-utils.js';
 
 function parseCats(cat) {
   if (Array.isArray(cat)) return cat.map(c => String(c).trim()).filter(Boolean);
@@ -635,15 +636,20 @@ if (ordersTable) {
 
   const FILTER_ORDER_STATUSES = ['', 'pending', 'confirmed', 'shipped', 'delivered', 'cancelled', 'return_requested', 'returned'];
 
+  let productImageMap = {};
+
   function renderItems(items) {
     const arr = Array.isArray(items) ? items : [];
     if (!arr.length) return '<em>No items</em>';
-    return arr.map(i => `
-      <div style="display:flex;justify-content:space-between;padding:2px 0;">
-        <span>${esc(i.title)}${i.variant_label ? ' (' + esc(i.variant_label) + ')' : ''} \u00d7 ${i.qty}</span>
-        <span>Rs ${(Number(i.price) * Number(i.qty)).toLocaleString()}</span>
-      </div>
-    `).join('');
+    return arr.map(i => {
+      const img = productImageMap[i.id] || 'https://placehold.co/40x40?text=';
+      return `
+      <div style="display:flex;align-items:center;gap:8px;padding:4px 0;border-bottom:1px solid #2a2a2a;">
+        <img src="${img}" style="width:40px;height:40px;object-fit:cover;border-radius:4px;flex-shrink:0;" onerror="this.src='https://placehold.co/40x40?text=?'" />
+        <span style="flex:1;">${esc(i.title)}${i.variant_label ? ' <span style="color:#888;">(' + esc(i.variant_label) + ')</span>' : ''} \u00d7 ${i.qty}</span>
+        <span style="white-space:nowrap;">Rs ${(Number(i.price) * Number(i.qty)).toLocaleString()}</span>
+      </div>`;
+    }).join('');
   }
 
   function renderOrderFilters() {
@@ -676,6 +682,12 @@ if (ordersTable) {
     const totalPages = Math.ceil(count / ORDERS_PER_PAGE) || 1;
 
     if (!orders.length) { ordersTable.innerHTML = '<p>No orders yet.</p>'; return; }
+
+    const allProducts = await getProducts();
+    productImageMap = {};
+    allProducts.forEach(p => { productImageMap[p.id] = p.image_url; });
+
+    const confirmedStatuses = ['confirmed', 'shipped', 'delivered'];
 
     ordersTable.innerHTML = `
       <div class="admin-table-wrap">
@@ -713,6 +725,8 @@ if (ordersTable) {
                 `}
               </td>
               <td class="action-cell">
+                <button class="download-invoice-btn" data-order='${esc(JSON.stringify(o))}' style="background:var(--admin-volt);color:#000;border:none;border-radius:6px;cursor:pointer;padding:4px 6px;font-size:0.7rem;margin-bottom:2px;${confirmedStatuses.includes(o.status) ? '' : 'opacity:0.4;pointer-events:none;'}" title="Download Invoice">Invoice</button>
+                <button class="download-challan-btn" data-order='${esc(JSON.stringify(o))}' style="background:var(--admin-volt);color:#000;border:none;border-radius:6px;cursor:pointer;padding:4px 6px;font-size:0.7rem;margin-bottom:2px;${confirmedStatuses.includes(o.status) ? '' : 'opacity:0.4;pointer-events:none;'}" title="Download Delivery Challan">Challan</button>
                 <button class="delete-order-btn" data-id="${o.id}" style="background:#c62828;color:#fff;border:none;border-radius:6px;cursor:pointer;padding:4px 8px;font-size:0.75rem;">Delete</button>
               </td>
             </tr>
@@ -797,6 +811,28 @@ if (ordersTable) {
           alert('Failed: ' + (err.message || 'unknown error'));
           btn.disabled = false;
           btn.textContent = 'Delete';
+        }
+      });
+    });
+
+    ordersTable.querySelectorAll('.download-invoice-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        try {
+          const order = JSON.parse(btn.dataset.order);
+          generateInvoice(order);
+        } catch (err) {
+          alert('Failed to generate invoice: ' + err.message);
+        }
+      });
+    });
+
+    ordersTable.querySelectorAll('.download-challan-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        try {
+          const order = JSON.parse(btn.dataset.order);
+          generateDeliveryChallan(order);
+        } catch (err) {
+          alert('Failed to generate challan: ' + err.message);
         }
       });
     });
