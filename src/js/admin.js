@@ -687,8 +687,6 @@ if (ordersTable) {
     productImageMap = {};
     allProducts.forEach(p => { productImageMap[p.id] = p.image_url; });
 
-    const confirmedStatuses = ['confirmed', 'shipped', 'delivered'];
-
     ordersTable.innerHTML = `
       <div class="admin-table-wrap">
       <table class="admin-table-wide">
@@ -725,8 +723,6 @@ if (ordersTable) {
                 `}
               </td>
               <td class="action-cell">
-                <button class="download-invoice-btn" data-order='${esc(JSON.stringify(o))}' style="background:var(--admin-volt);color:#000;border:none;border-radius:6px;cursor:pointer;padding:4px 6px;font-size:0.7rem;margin-bottom:2px;${confirmedStatuses.includes(o.status) ? '' : 'opacity:0.4;pointer-events:none;'}" title="Download Invoice">Invoice</button>
-                <button class="download-challan-btn" data-order='${esc(JSON.stringify(o))}' style="background:var(--admin-volt);color:#000;border:none;border-radius:6px;cursor:pointer;padding:4px 6px;font-size:0.7rem;margin-bottom:2px;${confirmedStatuses.includes(o.status) ? '' : 'opacity:0.4;pointer-events:none;'}" title="Download Delivery Challan">Challan</button>
                 <button class="delete-order-btn" data-id="${o.id}" style="background:#c62828;color:#fff;border:none;border-radius:6px;cursor:pointer;padding:4px 8px;font-size:0.75rem;">Delete</button>
               </td>
             </tr>
@@ -815,27 +811,6 @@ if (ordersTable) {
       });
     });
 
-    ordersTable.querySelectorAll('.download-invoice-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        try {
-          const order = JSON.parse(btn.dataset.order);
-          generateInvoice(order);
-        } catch (err) {
-          alert('Failed to generate invoice: ' + err.message);
-        }
-      });
-    });
-
-    ordersTable.querySelectorAll('.download-challan-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        try {
-          const order = JSON.parse(btn.dataset.order);
-          generateDeliveryChallan(order);
-        } catch (err) {
-          alert('Failed to generate challan: ' + err.message);
-        }
-      });
-    });
 
     document.getElementById('orders-prev')?.addEventListener('click', () => {
       if (ordersPage > 1) { ordersPage--; loadOrders(); }
@@ -1514,11 +1489,14 @@ if (invoicesTable) {
     invoicesTable.innerHTML = '<div class="admin-spinner">Loading\u2026</div>';
     renderInvoiceFilters();
     const filterOpts = invoicesStatusFilter ? { status: invoicesStatusFilter } : {};
-    const [invoices, count] = await Promise.all([
+    const [invoices, count, allOrders] = await Promise.all([
       getInvoices({ limit: INVOICES_PER_PAGE, offset: (invoicesPage - 1) * INVOICES_PER_PAGE, ...filterOpts }),
       getInvoicesCount(filterOpts),
+      getOrders(),
     ]);
     const totalPages = Math.ceil(count / INVOICES_PER_PAGE) || 1;
+    const orderNumMap = {};
+    allOrders.forEach(o => { orderNumMap[o.id] = o.order_number; });
 
     if (!invoices.length) { invoicesTable.innerHTML = '<p>No invoices yet.</p>'; return; }
 
@@ -1531,7 +1509,10 @@ if (invoicesTable) {
           </tr>
         </thead>
         <tbody>
-          ${invoices.map((inv, i) => `
+          ${invoices.map((inv, i) => {
+            const orderNum = orderNumMap[inv.order_id] || inv.order_id;
+            const data = { ...inv, order_number: orderNum };
+            return `
             <tr style="--i:${i}">
               <td><code style="font-size:0.8rem;">${esc(inv.invoice_number)}</code></td>
               <td>${new Date(inv.created_at).toLocaleDateString('en-PK')}</td>
@@ -1546,13 +1527,15 @@ if (invoicesTable) {
                 }">${inv.status.replace('_', ' ')}</span>
               </td>
               <td class="action-cell">
+                <button class="inv-download-invoice-btn" data-invoice='${esc(JSON.stringify(data))}' style="padding:4px 8px;font-size:0.75rem;background:#000;color:#fff;border:none;border-radius:6px;cursor:pointer;">Invoice</button>
+                <button class="inv-download-challan-btn" data-invoice='${esc(JSON.stringify(data))}' style="padding:4px 8px;font-size:0.75rem;background:#000;color:#fff;border:none;border-radius:6px;cursor:pointer;">Challan</button>
                 ${inv.status === 'active' ? `
                   <button class="cancel-invoice-btn" data-id="${inv.id}" style="padding:4px 10px;font-size:0.8rem;background:#c62828;color:#fff;border:none;border-radius:6px;cursor:pointer;">Cancel</button>
                 ` : ''}
                 <button class="delete-invoice-btn" data-id="${inv.id}" style="padding:4px 10px;font-size:0.8rem;background:#555;color:#fff;border:none;border-radius:6px;cursor:pointer;">Delete</button>
               </td>
-            </tr>
-          `).join('')}
+            </tr>`;
+          }).join('')}
         </tbody>
       </table>
       </div>
@@ -1562,6 +1545,26 @@ if (invoicesTable) {
         <button class="button page-btn" id="inv-next" ${invoicesPage >= totalPages ? 'disabled' : ''}>Next \u2192</button>
       </div>
     `;
+
+    invoicesTable.querySelectorAll('.inv-download-invoice-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        try {
+          generateInvoice(JSON.parse(btn.dataset.invoice));
+        } catch (err) {
+          alert('Failed to generate invoice: ' + err.message);
+        }
+      });
+    });
+
+    invoicesTable.querySelectorAll('.inv-download-challan-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        try {
+          generateDeliveryChallan(JSON.parse(btn.dataset.invoice));
+        } catch (err) {
+          alert('Failed to generate challan: ' + err.message);
+        }
+      });
+    });
 
     invoicesTable.querySelectorAll('.cancel-invoice-btn').forEach(btn => {
       btn.addEventListener('click', async () => {

@@ -1,6 +1,6 @@
 import { trackOrder, cancelOrder, requestReturn } from './api.js';
 import { showToast } from './main.js';
-import { generateInvoice, generateDeliveryChallan } from './pdf-utils.js';
+import { generateInvoice } from './pdf-utils.js';
 
 let currentOrder = null;
 
@@ -112,7 +112,6 @@ function renderOrder(o) {
       ` : ''}
       ${['confirmed', 'shipped', 'delivered'].includes(o.status) ? `
         <button id="download-invoice-btn" class="bg-primary text-white px-4 py-2.5 text-sm font-semibold rounded-lg hover:bg-primary/80 transition-all flex items-center gap-1.5"><span class="material-symbols-outlined text-lg">receipt</span> Invoice</button>
-        <button id="download-challan-btn" class="bg-primary text-white px-4 py-2.5 text-sm font-semibold rounded-lg hover:bg-primary/80 transition-all flex items-center gap-1.5"><span class="material-symbols-outlined text-lg">assignment</span> Challan</button>
         <button id="request-return-btn" class="bg-orange-500 text-white px-6 py-2.5 text-sm font-semibold rounded-lg hover:bg-orange-600 transition-all">Request Return</button>
       ` : ''}
       <button onclick="closeOrderModal()" class="bg-surface-container-highest text-on-surface px-6 py-2.5 text-sm font-semibold rounded-lg hover:bg-surface-variant transition-all ml-auto">Close</button>
@@ -136,10 +135,6 @@ function renderOrder(o) {
 
   document.getElementById('download-invoice-btn')?.addEventListener('click', () => {
     generateInvoice(currentOrder);
-  });
-
-  document.getElementById('download-challan-btn')?.addEventListener('click', () => {
-    generateDeliveryChallan(currentOrder);
   });
 
   document.getElementById('request-return-btn')?.addEventListener('click', async () => {
