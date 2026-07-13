@@ -148,18 +148,20 @@ function renderProduct() {
         ${variantOptions}
 
         <!-- Qty + Add to Cart -->
-        <div class="flex items-center gap-4 mb-8">
-          <div class="flex items-center border-2 border-outline-variant rounded-lg overflow-hidden">
-            <button id="qty-minus" class="w-10 h-10 flex items-center justify-center text-lg font-bold hover:bg-surface-container transition-colors">−</button>
-            <span id="qty-display" class="w-12 text-center font-bold text-sm">1</span>
-            <button id="qty-plus" class="w-10 h-10 flex items-center justify-center text-lg font-bold hover:bg-surface-container transition-colors">+</button>
+        <div class="flex flex-col md:flex-row md:items-center gap-3 md:gap-4 mb-8">
+          <div class="flex items-center border-2 border-outline-variant rounded-lg overflow-hidden self-start">
+            <button id="qty-minus" class="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center text-lg font-bold hover:bg-surface-container transition-colors">−</button>
+            <span id="qty-display" class="w-12 md:w-14 text-center font-bold text-sm">1</span>
+            <button id="qty-plus" class="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center text-lg font-bold hover:bg-surface-container transition-colors">+</button>
           </div>
-          <button id="add-to-cart-btn" class="flex-1 bg-primary text-white px-8 py-3 font-label-bold text-sm rounded-lg btn-hover-volt transition-all uppercase tracking-widest flex items-center justify-center gap-2">
-            <span class="material-symbols-outlined text-lg">shopping_cart</span> Add to Cart
-          </button>
-          <button id="wishlist-btn" class="w-12 h-12 flex items-center justify-center rounded-lg border-2 border-outline-variant hover:border-secondary-fixed transition-all ${isInWishlist(productId) ? 'text-secondary-fixed border-secondary-fixed' : 'text-on-surface-variant'}">
-            <span class="material-symbols-outlined">${isInWishlist(productId) ? 'favorite' : 'favorite_border'}</span>
-          </button>
+          <div class="flex items-center gap-3 flex-1">
+            <button id="add-to-cart-btn" class="flex-1 bg-primary text-white px-6 md:px-8 py-3 md:py-3.5 font-label-bold text-sm rounded-lg btn-hover-volt transition-all uppercase tracking-widest flex items-center justify-center gap-2">
+              <span class="material-symbols-outlined text-lg">shopping_cart</span> Add to Cart
+            </button>
+            <button id="wishlist-btn" class="w-12 h-12 flex items-center justify-center rounded-lg border-2 border-outline-variant hover:border-secondary-fixed transition-all ${isInWishlist(productId) ? 'text-secondary-fixed border-secondary-fixed' : 'text-on-surface-variant'}">
+              <span class="material-symbols-outlined">${isInWishlist(productId) ? 'favorite' : 'favorite_border'}</span>
+            </button>
+          </div>
         </div>
 
         ${product.description ? `

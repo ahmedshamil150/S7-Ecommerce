@@ -135,9 +135,9 @@ nav { transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1); }
 </section>
 
 <!-- Reviews Section -->
-<section class="py-16 bg-surface-container-low">
+<section class="py-16 bg-surface-container-low pb-28 md:pb-16">
   <div class="container mx-auto px-margin-mobile md:px-margin-desktop max-w-3xl">
-    <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-8">Customer Reviews</h2>
+    <h2 class="font-headline-lg text-2xl md:text-headline-lg mb-8">Customer Reviews</h2>
     <div id="reviews-list" class="space-y-4 mb-10">
       <p class="text-on-surface-variant text-sm animate-pulse">Loading reviews...</p>
     </div>
@@ -152,11 +152,11 @@ nav { transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1); }
         <div>
           <label class="block text-sm font-semibold text-on-surface mb-1">Rating *</label>
           <div id="star-rating" class="flex gap-1 text-2xl cursor-pointer">
-            <span class="star text-outline-variant hover:text-secondary-fixed transition-colors" data-val="1">G��</span>
-            <span class="star text-outline-variant hover:text-secondary-fixed transition-colors" data-val="2">G��</span>
-            <span class="star text-outline-variant hover:text-secondary-fixed transition-colors" data-val="3">G��</span>
-            <span class="star text-outline-variant hover:text-secondary-fixed transition-colors" data-val="4">G��</span>
-            <span class="star text-outline-variant hover:text-secondary-fixed transition-colors" data-val="5">G��</span>
+            <span class="star text-outline-variant hover:text-secondary-fixed transition-colors" data-val="1">★</span>
+            <span class="star text-outline-variant hover:text-secondary-fixed transition-colors" data-val="2">★</span>
+            <span class="star text-outline-variant hover:text-secondary-fixed transition-colors" data-val="3">★</span>
+            <span class="star text-outline-variant hover:text-secondary-fixed transition-colors" data-val="4">★</span>
+            <span class="star text-outline-variant hover:text-secondary-fixed transition-colors" data-val="5">★</span>
           </div>
         </div>
         <div>
@@ -171,12 +171,12 @@ nav { transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1); }
 </section>
 
 <!-- Related Products -->
-<section class="py-16">
+<section class="py-16 pb-28 md:pb-16">
   <div class="container mx-auto px-margin-mobile md:px-margin-desktop">
     <div class="flex items-end justify-between mb-8">
       <div>
         <span class="text-secondary-fixed font-black tracking-widest uppercase text-xs bg-primary px-3 py-1 skew-bg inline-block"><span class="skew-content">RELATED</span></span>
-        <h2 class="font-headline-lg text-headline-lg mt-4">You May Also Like</h2>
+        <h2 class="font-headline-lg text-2xl md:text-headline-lg mt-4">You May Also Like</h2>
       </div>
       <a class="hidden md:flex items-center gap-2 font-label-bold text-on-surface-variant hover:text-primary transition-colors" href="./shop">View All <span class="material-symbols-outlined">arrow_right_alt</span></a>
     <div id="related-grid" class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-gutter"></div>
@@ -244,25 +244,28 @@ nav { transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1); }
     &copy; 2025 S7 SPORTS. All rights reserved.
   </div>
 </footer>
+
 <!-- Mobile Bottom Navigation -->
-<nav class="md:hidden fixed bottom-4 left-1/2 -translate-x-1/2 z-50 flex justify-around items-center h-14 w-[90%] max-w-md rounded-full bg-black/50 backdrop-blur-sm shadow-[0_-4px_12px_rgba(0,0,0,0.08)] px-4">
-    <a href="./" class="bottom-nav-item w-11 h-11 rounded-full flex items-center justify-center bg-primary text-surface-container-lowest">
-      <span class="material-symbols-outlined text-xl">home</span>
-    </a>
-    <a href="./shop" class="bottom-nav-item w-11 h-11 rounded-full flex items-center justify-center bg-secondary-fixed text-primary">
-      <span class="material-symbols-outlined text-xl">sports_cricket</span>
-    </a>
-    <a href="./cart" class="bottom-nav-item w-11 h-11 rounded-full flex items-center justify-center relative bg-primary text-surface-container-lowest">
-      <span class="material-symbols-outlined text-xl">shopping_bag</span>
-      <span class="cart-badge absolute -top-0.5 -right-0.5 bg-secondary-fixed text-primary text-[8px] font-bold px-1 rounded-full" style="display:none">0</span>
-    </a>
-    <a href="./wishlist" class="bottom-nav-item w-11 h-11 rounded-full flex items-center justify-center bg-primary text-surface-container-lowest">
-      <span class="material-symbols-outlined text-xl">favorite</span>
-    </a>
-    <a href="./order-status" class="bottom-nav-item w-11 h-11 rounded-full flex items-center justify-center bg-primary text-surface-container-lowest">
-      <span class="material-symbols-outlined text-xl">track_changes</span>
-    </a>
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-16 px-4 bg-surface-container-lowest shadow-[0_-4px_12px_rgba(0,0,0,0.08)] rounded-t-xl">
+  <a class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 font-label-bold hover:opacity-100 transition-all" href="./">
+    <span class="material-symbols-outlined">home</span><span class="text-[10px]">Home</span>
+  </a>
+  <a class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 font-label-bold hover:opacity-100 transition-all" href="./shop">
+    <span class="material-symbols-outlined">sports_cricket</span><span class="text-[10px]">Shop</span>
+  </a>
+  <a class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 font-label-bold hover:opacity-100 transition-all relative" href="./cart">
+    <span class="material-symbols-outlined">shopping_bag</span>
+    <span class="cart-badge absolute -top-1 -right-1 bg-secondary-fixed text-primary text-[8px] font-bold px-1 rounded-full" style="display:none">0</span>
+    <span class="text-[10px]">Cart</span>
+  </a>
+  <a class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 font-label-bold hover:opacity-100 transition-all" href="./wishlist">
+    <span class="material-symbols-outlined">favorite</span><span class="text-[10px]">Wishlist</span>
+  </a>
+  <a class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 font-label-bold hover:opacity-100 transition-all" href="./order-status">
+    <span class="material-symbols-outlined">track_changes</span><span class="text-[10px]">Track</span>
+  </a>
 </nav>
+
 <script>
 window.onscroll = function() {
   document.querySelector('nav').classList.toggle('scrolled', window.scrollY > 50);
@@ -272,8 +275,6 @@ window.onscroll = function() {
 <script type="module" src="./js/product.js"></script>
 </body>
 </html>
-
-
 
 
 
