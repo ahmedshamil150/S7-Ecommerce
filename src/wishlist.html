@@ -57,14 +57,49 @@ tailwind.config = {
 </script>
 <style>
 .btn-hover-volt:hover { background-color: #caf300 !important; color: #000000 !important; }
+nav.scrolled {
+  width: 70% !important;
+  left: 15% !important;
+  top: 12px !important;
+  border-radius: 9999px !important;
+  height: 2.5rem !important;
+  background: white !important;
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05) !important;
+  backdrop-filter: blur(16px) !important;
+  padding-left: 0.75rem !important;
+  padding-right: 0.75rem !important;
+  border: none !important;
+}
 
+nav { transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1); }
 </style>
 </head>
 <body class="bg-background text-on-background selection:bg-secondary-fixed selection:text-primary overflow-x-hidden">
 
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-center md:justify-between items-center px-margin-desktop h-16 md:h-16 bg-surface-container-lowest border-b border-outline-variant shadow-sm">
+  <div class="flex items-center gap-6">
+    <a class="flex items-center" href="./"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuA36VhuqQ9j4qGqobDqt6yFM_fdxjADH7Q4dTXoi7YQzrqlYnfdM-wbko3rN9HcGG0SJGhYghPAH9RQQSxKSH4fjpLLuN3kPZuV1ilnjXT3lIQI4UsA2Lz8Xtx30kEBV3OIkPDMjILdSE8AzXGchmox89YA-jR79nEvR8jYHAyUgnWhSw0Y9HQsUGnQmdS_suqzWPV-bSD50zOcJEq6-fim6cJmNYoXGObm8MoQX_E3ppYw4PziWx1yi4P8zVmF07lEvCS8rHTczAJs" alt="S7 Sports" class="h-8" /></a>
+    <div class="hidden md:flex items-center gap-6 nav-links">
+      <a class="font-body-md text-body-md text-primary font-bold hover:text-secondary transition-colors" href="./">Home</a>
+      <a class="font-body-md text-body-md text-primary font-bold hover:text-secondary transition-colors" href="./shop">Shop</a>
+      <a class="font-body-md text-body-md text-primary font-bold hover:text-secondary transition-colors" href="./order-status">Track</a>
+      <a class="font-body-md text-body-md text-primary font-bold hover:text-secondary transition-colors" href="./about">About</a>
+      <a class="font-body-md text-body-md text-primary font-bold hover:text-secondary transition-colors" href="./contact">Contact</a>
+    </div>
+  </div>
+  <div class="hidden md:flex items-center gap-4 nav-icons">
+    <a href="./wishlist" class="material-symbols-outlined text-primary hover:scale-110 transition-transform relative">
+      favorite
+      <span class="wishlist-badge absolute -top-2 -right-2 bg-secondary-fixed text-primary text-[10px] font-bold px-1.5 py-0.5 rounded-full" style="display:none">0</span>
+    </a>
+    <a href="./cart" class="material-symbols-outlined text-primary hover:scale-110 transition-transform relative">
+      shopping_cart
+      <span class="cart-badge absolute -top-2 -right-2 bg-secondary-fixed text-primary text-[10px] font-bold px-1.5 py-0.5 rounded-full" style="display:none">0</span>
+    </a>
+  </div>
+</nav>
 
-
-<section class="bg-primary pt-16 pb-12">
+<section class="bg-primary pt-28 pb-12">
   <div class="container mx-auto px-margin-mobile md:px-margin-desktop">
     <h1 class="font-display-lg text-[48px] md:text-display-lg leading-tight text-surface-container-lowest">
       WISH<span class="text-secondary-fixed italic">LIST</span>
@@ -149,12 +184,16 @@ tailwind.config = {
   </div>
 </footer>
 
-
+<script>
+window.onscroll = function() {
+  document.querySelector('nav').classList.toggle('scrolled', window.scrollY > 50);
+};
+</script>
 <script type="module" src="./js/main.js"></script>
 <script type="module" src="./js/wishlist.js"></script>
 
 <!-- Mobile Bottom Navigation -->
-<nav class="fixed bottom-4 left-1/2 -translate-x-1/2 z-50 flex justify-around items-center h-14 w-[90%] max-w-md rounded-full bg-black/50 backdrop-blur-sm shadow-[0_-4px_12px_rgba(0,0,0,0.08)] px-4">
+<nav class="md:hidden fixed bottom-4 left-1/2 -translate-x-1/2 z-50 flex justify-around items-center h-14 w-[90%] max-w-md rounded-full bg-black/50 backdrop-blur-sm shadow-[0_-4px_12px_rgba(0,0,0,0.08)] px-4">
     <a href="./" class="bottom-nav-item w-11 h-11 rounded-full flex items-center justify-center bg-primary text-surface-container-lowest">
       <span class="material-symbols-outlined text-xl">home</span>
     </a>
