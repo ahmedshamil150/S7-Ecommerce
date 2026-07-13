@@ -10,8 +10,7 @@
     "lint": "eslint . --ext .js,.jsx,.html"
   },
   "dependencies": {
-    "jspdf": "^2.5.2",
-    "ogl": "^1.0.11"
+    "jspdf": "^2.5.2"
   },
   "devDependencies": {
     "eslint": "^8.0.0",

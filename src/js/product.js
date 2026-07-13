@@ -300,12 +300,12 @@ function renderRelated() {
         ${d > 0 ? `<span class="absolute top-3 left-3 bg-primary text-secondary-fixed font-label-bold px-3 py-1 text-[10px] uppercase rounded z-10 skew-bg"><span class="skew-content">${d}% OFF</span></span>` : ''}
         <div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-500" style="background-image: url('${img}')"></div>
       </div>
-      <div class="px-4 py-4">
-        <span class="text-on-surface-variant text-xs uppercase tracking-widest font-bold">${Array.isArray(p.category) ? p.category[0] || 'Equipment' : 'Equipment'}</span>
-        <h4 class="font-headline-md text-lg mt-1 text-on-surface">${esc(p.title)}</h4>
-        <div class="flex items-center gap-2 mt-1">
-          <span class="font-bold text-lg text-primary">Rs ${fp.toLocaleString()}</span>
-          ${d > 0 ? `<span class="text-sm text-on-surface-variant line-through">Rs ${Number(p.price).toLocaleString()}</span>` : ''}
+      <div class="px-3 py-3 md:px-4 md:py-4">
+        <span class="text-on-surface-variant text-[10px] md:text-xs uppercase tracking-widest font-bold">${Array.isArray(p.category) ? p.category[0] || 'Equipment' : 'Equipment'}</span>
+        <h4 class="font-headline-md text-sm md:text-lg mt-1 text-on-surface leading-tight">${esc(p.title)}</h4>
+        <div class="flex items-center gap-1 md:gap-2 mt-1">
+          <span class="font-bold text-sm md:text-lg text-primary">Rs ${fp.toLocaleString()}</span>
+          ${d > 0 ? `<span class="text-[11px] md:text-sm text-on-surface-variant line-through">Rs ${Number(p.price).toLocaleString()}</span>` : ''}
         </div>
       </div>
     </a>`;
