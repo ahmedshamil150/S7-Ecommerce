@@ -263,9 +263,15 @@ nav { transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1); }
       <span class="material-symbols-outlined text-xl">track_changes</span>
     </a>
 </nav>
+<script>
+window.onscroll = function() {
+  document.querySelector('nav').classList.toggle('scrolled', window.scrollY > 50);
+};
+</script>
+<script type="module" src="./js/main.js"></script>
+<script type="module" src="./js/product.js"></script>
 </body>
 </html>
-
 
 
 
