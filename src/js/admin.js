@@ -683,9 +683,11 @@ if (ordersTable) {
 
     if (!orders.length) { ordersTable.innerHTML = '<p>No orders yet.</p>'; return; }
 
-    const allProducts = await getProducts();
+    const [allProducts, allInvoices] = await Promise.all([getProducts(), getInvoices()]);
     productImageMap = {};
     allProducts.forEach(p => { productImageMap[p.id] = p.image_url; });
+    const invoiceMap = {};
+    allInvoices.forEach(inv => { invoiceMap[inv.order_id] = inv; });
 
     ordersTable.innerHTML = `
       <div class="admin-table-wrap">
@@ -697,7 +699,10 @@ if (ordersTable) {
           </tr>
         </thead>
         <tbody>
-          ${orders.map((o, i) => `
+          ${orders.map((o, i) => {
+            const inv = invoiceMap[o.id];
+            const docData = { ...o, invoice_number: inv ? inv.invoice_number : '' };
+            return `
             <tr class="order-main-row" data-order-id="${o.id}" style="--i:${i}">
               <td style="text-align:center;">
                 <button class="toggle-items-btn" data-id="${o.id}" title="Show items">+</button>
@@ -723,6 +728,8 @@ if (ordersTable) {
                 `}
               </td>
               <td class="action-cell">
+                <button class="order-download-invoice-btn" data-doc='${esc(JSON.stringify(docData))}' style="padding:4px 6px;font-size:0.7rem;background:#000;color:#fff;border:none;border-radius:6px;cursor:pointer;">Invoice</button>
+                <button class="order-download-challan-btn" data-doc='${esc(JSON.stringify(docData))}' style="padding:4px 6px;font-size:0.7rem;background:#000;color:#fff;border:none;border-radius:6px;cursor:pointer;">Challan</button>
                 <button class="delete-order-btn" data-id="${o.id}" style="background:#c62828;color:#fff;border:none;border-radius:6px;cursor:pointer;padding:4px 8px;font-size:0.75rem;">Delete</button>
               </td>
             </tr>
@@ -731,8 +738,8 @@ if (ordersTable) {
                 <div style="font-weight:600;margin-bottom:0.5rem;color:var(--admin-volt);">Order Items</div>
                 ${renderItems(o.items)}
               </td>
-            </tr>
-          `).join('')}
+            </tr>`;
+          }).join('')}
         </tbody>
       </table>
       </div>
@@ -807,6 +814,26 @@ if (ordersTable) {
           alert('Failed: ' + (err.message || 'unknown error'));
           btn.disabled = false;
           btn.textContent = 'Delete';
+        }
+      });
+    });
+
+    ordersTable.querySelectorAll('.order-download-invoice-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        try {
+          generateInvoice(JSON.parse(btn.dataset.doc));
+        } catch (err) {
+          alert('Failed to generate invoice: ' + err.message);
+        }
+      });
+    });
+
+    ordersTable.querySelectorAll('.order-download-challan-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        try {
+          generateDeliveryChallan(JSON.parse(btn.dataset.doc));
+        } catch (err) {
+          alert('Failed to generate challan: ' + err.message);
         }
       });
     });
