@@ -58,33 +58,13 @@ tailwind.config = {
 <style>
 .btn-hover-volt:hover { background-color: #caf300 !important; color: #000000 !important; }
 nav.scrolled { justify-content: center; }
-nav.scrolled #sports-text,
-nav.scrolled .nav-links,
-nav.scrolled .nav-icons { display: none !important; }
+nav.scrolled #sports-text { display: none !important; }
 </style>
 </head>
 <body class="bg-background text-on-background selection:bg-secondary-fill selection:text-primary overflow-x-hidden">
 
-<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-desktop h-16 md:h-16 bg-surface-container-lowest border-b border-outline-variant shadow-sm transition-all duration-300">
-  <div class="flex items-center gap-8">
-    <a class="flex items-center" href="./"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuA36VhuqQ9j4qGqobDqt6yFM_fdxjADH7Q4dTXoi7YQzrqlYnfdM-wbko3rN9HcGG0SJGhYghPAH9RQQSxKSH4fjpLLuN3kPZuV1ilnjXT3lIQI4UsA2Lz8Xtx30kEBV3OIkPDMjILdSE8AzXGchmox89YA-jR79nEvR8jYHAyUgnWhSw0Y9HQsUGnQmdS_suqzWPV-bSD50zOcJEq6-fim6cJmNYoXGObm8MoQX_E3ppYw4PziWx1yi4P8zVmF07lEvCS8rHTczAJs" alt="S7 Sports" class="h-8" /><span id="brand-text"><span class="font-headline-md text-sm font-black italic text-primary">S7</span> <span id="sports-text" class="text-[10px] font-label-bold text-on-surface-variant tracking-widest">SPORTS</span></span></a>
-    <div class="hidden md:flex items-center gap-6 nav-links">
-      <a class="font-body-md text-body-md text-primary font-bold hover:text-secondary transition-colors" href="./">Home</a>
-      <a class="font-body-md text-body-md text-primary font-bold hover:text-secondary transition-colors" href="./shop">Shop</a>
-      <a class="font-body-md text-body-md text-primary font-bold hover:text-secondary transition-colors" href="./order-status">Track</a>
-      <a class="font-body-md text-body-md text-primary font-bold hover:text-secondary transition-colors" href="./about">About</a>
-      <a class="font-body-md text-body-md text-primary font-bold hover:text-secondary transition-colors" href="./contact">Contact</a>
-    </div>
-  </div>
-  <div class="hidden md:flex items-center gap-4 nav-icons"><a href="./wishlist" class="material-symbols-outlined text-primary hover:scale-110 transition-transform relative">
-      favorite
-      <span class="wishlist-badge absolute -top-2 -right-2 bg-secondary-fixed text-primary text-[10px] font-bold px-1.5 py-0.5 rounded-full" style="display:none">0</span>
-    </a>
-    <a href="./cart" class="material-symbols-outlined text-primary hover:scale-110 transition-transform relative">
-      shopping_cart
-      <span class="cart-badge absolute -top-2 -right-2 bg-secondary-fixed text-primary text-[10px] font-bold px-1.5 py-0.5 rounded-full" style="display:none">0</span>
-    </a>
-  </div>
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-center items-center px-margin-desktop h-16 md:h-16 bg-surface-container-lowest border-b border-outline-variant shadow-sm transition-all duration-300">
+  <a class="flex items-center" href="./"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuA36VhuqQ9j4qGqobDqt6yFM_fdxjADH7Q4dTXoi7YQzrqlYnfdM-wbko3rN9HcGG0SJGhYghPAH9RQQSxKSH4fjpLLuN3kPZuV1ilnjXT3lIQI4UsA2Lz8Xtx30kEBV3OIkPDMjILdSE8AzXGchmox89YA-jR79nEvR8jYHAyUgnWhSw0Y9HQsUGnQmdS_suqzWPV-bSD50zOcJEq6-fim6cJmNYoXGObm8MoQX_E3ppYw4PziWx1yi4P8zVmF07lEvCS8rHTczAJs" alt="S7 Sports" class="h-8" /><span id="brand-text"><span class="font-headline-md text-sm font-black italic text-primary">S7</span> <span id="sports-text" class="text-[10px] font-label-bold text-on-surface-variant tracking-widest">SPORTS</span></span></a>
 </nav>
 
 <section class="bg-primary pt-28 pb-12">
@@ -242,5 +222,11 @@ window.onscroll = function() {
 <script type="module" src="./js/order-status.js"></script>
 </body>
 </html>
+
+
+
+
+
+
 
 
