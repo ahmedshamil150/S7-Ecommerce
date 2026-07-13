@@ -53,19 +53,19 @@ function render() {
     const lineTotal = Number(item.price) * Number(item.qty);
     const img = item.image || 'https://placehold.co/80x80?text=No+Img';
     return `
-      <div class="flex items-center gap-4 py-4 border-b border-outline-variant cart-item" data-index="${i}">
+      <div class="flex items-center gap-2 md:gap-4 py-3 md:py-4 border-b border-outline-variant cart-item" data-index="${i}">
         <img src="${img}" alt="${esc(item.title)}" class="w-16 h-16 md:w-20 md:h-20 rounded-xl object-cover bg-surface-container flex-shrink-0" onerror="this.src='https://placehold.co/80x80?text=?'" />
         <div class="flex-1 min-w-0">
           <h4 class="font-semibold text-sm md:text-base text-on-surface truncate">${esc(item.title)}</h4>
           ${item.variant_label ? `<p class="text-xs text-on-surface-variant mt-0.5">${esc(item.variant_label)}</p>` : ''}
           <p class="text-sm font-bold text-on-surface mt-1">Rs ${Number(item.price).toLocaleString()}</p>
         </div>
-        <div class="flex items-center border-2 border-outline-variant rounded-lg overflow-hidden flex-shrink-0">
-          <button class="qty-minus w-8 h-8 flex items-center justify-center text-sm font-bold hover:bg-surface-container transition-colors" data-index="${i}">−</button>
-          <span class="w-8 text-center text-sm font-bold">${item.qty}</span>
-          <button class="qty-plus w-8 h-8 flex items-center justify-center text-sm font-bold hover:bg-surface-container transition-colors" data-index="${i}">+</button>
+        <div class="flex items-center border border-outline-variant rounded-lg overflow-hidden flex-shrink-0">
+          <button class="qty-minus w-7 h-7 md:w-8 md:h-8 flex items-center justify-center text-xs md:text-sm font-bold hover:bg-surface-container transition-colors" data-index="${i}">−</button>
+          <span class="w-7 md:w-8 text-center text-xs md:text-sm font-bold">${item.qty}</span>
+          <button class="qty-plus w-7 h-7 md:w-8 md:h-8 flex items-center justify-center text-xs md:text-sm font-bold hover:bg-surface-container transition-colors" data-index="${i}">+</button>
         </div>
-        <p class="text-sm font-bold text-on-surface w-20 text-right flex-shrink-0">Rs ${lineTotal.toLocaleString()}</p>
+        <p class="text-xs md:text-sm font-bold text-on-surface w-16 md:w-20 text-right flex-shrink-0">Rs ${lineTotal.toLocaleString()}</p>
         <button class="remove-item text-on-surface-variant hover:text-error transition-colors flex-shrink-0" data-index="${i}">
           <span class="material-symbols-outlined text-lg">delete</span>
         </button>
