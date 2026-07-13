@@ -210,24 +210,23 @@ nav { transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1); }
   </div>
 </footer>
 
-<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-16 px-4 bg-surface-container-lowest shadow-[0_-4px_12px_rgba(0,0,0,0.08)] rounded-t-xl">
-  <a class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 font-label-bold hover:opacity-100" href="./">
-    <span class="material-symbols-outlined">home</span><span class="text-[10px]">Home</span>
-  </a>
-  <a class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 font-label-bold hover:opacity-100" href="./shop">
-    <span class="material-symbols-outlined">sports_cricket</span><span class="text-[10px]">Shop</span>
-  </a>
-  <a class="flex flex-col items-center justify-center text-primary scale-110 font-label-bold relative" href="./cart">
-    <span class="material-symbols-outlined">shopping_bag</span>
-    <span class="cart-badge absolute -top-1 -right-1 bg-secondary-fixed text-primary text-[8px] font-bold px-1 rounded-full" style="display:none">0</span>
-    <span class="text-[10px]">Cart</span>
-  </a>
-  <a class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 font-label-bold hover:opacity-100" href="./wishlist">
-    <span class="material-symbols-outlined">favorite</span><span class="text-[10px]">Wishlist</span>
-  </a>
-  <a class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 font-label-bold hover:opacity-100" href="./order-status">
-    <span class="material-symbols-outlined">track_changes</span><span class="text-[10px]">Track</span>
-  </a>
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-16 px-6 bg-surface-container-lowest shadow-[0_-4px_12px_rgba(0,0,0,0.08)] rounded-t-xl">
+    <a href="./" class="bottom-nav-item w-11 h-11 rounded-full flex items-center justify-center bg-primary text-surface-container-lowest">
+      <span class="material-symbols-outlined text-xl">home</span>
+    </a>
+    <a href="./shop" class="bottom-nav-item w-11 h-11 rounded-full flex items-center justify-center bg-primary text-surface-container-lowest">
+      <span class="material-symbols-outlined text-xl">sports_cricket</span>
+    </a>
+    <a href="./cart" class="bottom-nav-item w-11 h-11 rounded-full flex items-center justify-center relative bg-secondary-fixed text-primary">
+      <span class="material-symbols-outlined text-xl">shopping_bag</span>
+      <span class="cart-badge absolute -top-0.5 -right-0.5 bg-secondary-fixed text-primary text-[8px] font-bold px-1 rounded-full" style="display:none">0</span>
+    </a>
+    <a href="./wishlist" class="bottom-nav-item w-11 h-11 rounded-full flex items-center justify-center bg-primary text-surface-container-lowest">
+      <span class="material-symbols-outlined text-xl">favorite</span>
+    </a>
+    <a href="./order-status" class="bottom-nav-item w-11 h-11 rounded-full flex items-center justify-center bg-primary text-surface-container-lowest">
+      <span class="material-symbols-outlined text-xl">track_changes</span>
+    </a>
 </nav>
 
 <script>
@@ -239,6 +238,7 @@ window.onscroll = function() {
 <script type="module" src="./js/cart.js"></script>
 </body>
 </html>
+
 
 
 

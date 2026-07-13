@@ -210,8 +210,30 @@ window.onscroll = function() {
 };
 </script>
 <script type="module" src="./js/main.js"></script>
+
+<!-- Mobile Bottom Navigation -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-16 px-6 bg-surface-container-lowest shadow-[0_-4px_12px_rgba(0,0,0,0.08)] rounded-t-xl">
+    <a href="./" class="bottom-nav-item w-11 h-11 rounded-full flex items-center justify-center bg-secondary-fixed text-primary">
+      <span class="material-symbols-outlined text-xl">home</span>
+    </a>
+    <a href="./shop" class="bottom-nav-item w-11 h-11 rounded-full flex items-center justify-center bg-primary text-surface-container-lowest">
+      <span class="material-symbols-outlined text-xl">sports_cricket</span>
+    </a>
+    <a href="./cart" class="bottom-nav-item w-11 h-11 rounded-full flex items-center justify-center relative bg-primary text-surface-container-lowest">
+      <span class="material-symbols-outlined text-xl">shopping_bag</span>
+      <span class="cart-badge absolute -top-0.5 -right-0.5 bg-secondary-fixed text-primary text-[8px] font-bold px-1 rounded-full" style="display:none">0</span>
+    </a>
+    <a href="./wishlist" class="bottom-nav-item w-11 h-11 rounded-full flex items-center justify-center bg-primary text-surface-container-lowest">
+      <span class="material-symbols-outlined text-xl">favorite</span>
+    </a>
+    <a href="./order-status" class="bottom-nav-item w-11 h-11 rounded-full flex items-center justify-center bg-primary text-surface-container-lowest">
+      <span class="material-symbols-outlined text-xl">track_changes</span>
+    </a>
+</nav>
 </body>
 </html>
+
+
 
 
 
