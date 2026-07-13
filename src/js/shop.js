@@ -20,6 +20,10 @@ let currentPage = 1;
 let totalProducts = 0;
 
 async function init() {
+  const params = new URLSearchParams(window.location.search);
+  const catParam = params.get('category');
+  if (catParam) activeCategory = catParam;
+
   await loadCategories();
   renderChips();
   await loadProducts();

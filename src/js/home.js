@@ -82,3 +82,30 @@ function renderProducts(products, grid) {
 }
 
 loadFeaturedProducts();
+
+// Auto-rotating category bento grid
+const catGrid = document.getElementById('category-grid');
+if (catGrid) {
+  const items = catGrid.querySelectorAll('.cat-item');
+  const layouts = [
+    ['md:col-span-2 md:row-span-2', 'md:col-span-2', '', ''],
+    ['md:col-span-2', 'md:col-span-2 md:row-span-2', '', ''],
+    ['md:col-span-2', '', 'md:col-span-2', ''],
+    ['md:col-span-2 md:row-span-2', '', '', 'md:col-span-2'],
+    ['', 'md:col-span-2 md:row-span-2', 'md:col-span-2', ''],
+    ['', 'md:col-span-2', '', 'md:col-span-2'],
+  ];
+  let idx = 0;
+  setInterval(() => {
+    idx = (idx + 1) % layouts.length;
+    catGrid.style.opacity = '0.4';
+    catGrid.style.transition = 'opacity 0.3s';
+    setTimeout(() => {
+      items.forEach((el, i) => {
+        el.className = 'cat-item relative group overflow-hidden rounded-xl border border-outline-variant cursor-pointer';
+        if (layouts[idx][i]) el.classList.add(...layouts[idx][i].split(' '));
+      });
+      catGrid.style.opacity = '1';
+    }, 300);
+  }, 4000);
+}
