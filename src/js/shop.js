@@ -144,8 +144,8 @@ function renderGrid() {
     const wishlisted = isInWishlist(p.id);
     const badge = d > 0 ? `${d}% OFF` : '';
 
-    return `<div class="product-card bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden group">
-      <div class="relative w-full aspect-square bg-surface-container overflow-hidden">
+    return `<div class="product-card bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden group flex flex-col">
+      <div class="relative w-full aspect-square bg-surface-container overflow-hidden flex-shrink-0">
         ${badge ? `<span class="absolute top-3 left-3 bg-primary text-secondary-fixed font-label-bold px-3 py-1 text-[10px] uppercase rounded z-10 skew-bg"><span class="skew-content">${badge}</span></span>` : ''}
         <a href="./product?id=${p.id}" class="block w-full h-full">
           <div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-500" style="background-image: url('${img}')"></div>
@@ -154,14 +154,14 @@ function renderGrid() {
           <span class="material-symbols-outlined text-lg">add</span>
         </button>
       </div>
-      <div class="px-4 py-4">
+      <div class="px-4 pt-4 pb-4 flex flex-col flex-1">
         <span class="text-on-surface-variant text-xs uppercase tracking-widest font-bold">${Array.isArray(p.category) ? p.category[0] || 'Equipment' : p.category || 'Equipment'}</span>
         <h4 class="font-headline-md text-lg mt-1 text-on-surface">${p.title}</h4>
         <div class="flex items-center gap-2 mt-1">
           <span class="font-bold text-lg text-primary">Rs ${finalPrice.toLocaleString()}</span>
           ${d > 0 ? `<span class="text-sm text-on-surface-variant line-through">Rs ${p.price.toLocaleString()}</span>` : ''}
         </div>
-        <div class="flex gap-2 mt-3">
+        <div class="flex gap-2 mt-3 mt-auto">
           <button class="flex-1 bg-primary text-white text-xs font-bold py-2.5 rounded-lg hover:opacity-90 transition-all uppercase tracking-wider add-to-cart" data-id="${p.id}" data-title="${p.title}" data-price="${finalPrice}">Add to Cart</button>
           <button class="w-9 h-9 flex items-center justify-center rounded-lg border border-outline-variant hover:border-primary transition-all wishlist-btn ${wishlisted ? 'text-secondary-fixed' : 'text-on-surface-variant'}" data-id="${p.id}" data-title="${p.title}" data-price="${finalPrice}" data-image="${img}">
             <span class="material-symbols-outlined text-lg">${wishlisted ? 'favorite' : 'favorite_border'}</span>
