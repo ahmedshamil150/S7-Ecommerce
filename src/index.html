@@ -116,6 +116,9 @@ tailwind.config = {
 .product-card .img-wrap{overflow:hidden}
 .product-card img{transition:transform .5s ease}
 .product-card:hover img{transform:scale(1.08)}
+.marquee-wrapper{overflow:hidden;white-space:nowrap;width:100%}
+@keyframes marquee-ltr{0%{transform:translateX(-50%)}100%{transform:translateX(0)}}
+.animate-marquee-ltr{animation:marquee-ltr 35s linear infinite}
 </style>
 </head>
 <body class="bg-background text-on-background selection:bg-secondary-fixed selection:text-primary overflow-x-hidden">
@@ -172,6 +175,28 @@ tailwind.config = {
   <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-surface-container-lowest/50">
     <span class="text-[10px] font-bold uppercase tracking-widest">Scroll</span>
     <div class="w-[2px] h-12 bg-gradient-to-b from-secondary-fixed to-transparent rounded-full animate-bounce"></div>
+  </div>
+  <!-- Category Ticker -->
+  <div class="absolute bottom-0 left-0 w-full bg-primary/80 backdrop-blur-sm border-t border-primary-fixed-dim/20 overflow-hidden py-3 marquee-wrapper">
+    <div class="flex gap-8 animate-marquee-ltr items-center" style="width: max-content;">
+      <a href="./shop?category=Cricket+Bats" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-secondary-fixed/10 text-secondary-fixed hover:bg-secondary-fixed hover:text-primary transition-all font-label-bold text-xs uppercase tracking-widest whitespace-nowrap flex-shrink-0">Cricket Bats</a>
+      <a href="./shop?category=Cricket+Balls" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-secondary-fixed/10 text-secondary-fixed hover:bg-secondary-fixed hover:text-primary transition-all font-label-bold text-xs uppercase tracking-widest whitespace-nowrap flex-shrink-0">Cricket Balls</a>
+      <a href="./shop?category=Pads+%26+Guards" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-secondary-fixed/10 text-secondary-fixed hover:bg-secondary-fixed hover:text-primary transition-all font-label-bold text-xs uppercase tracking-widest whitespace-nowrap flex-shrink-0">Pads &amp; Guards</a>
+      <a href="./shop?category=Gloves" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-secondary-fixed/10 text-secondary-fixed hover:bg-secondary-fixed hover:text-primary transition-all font-label-bold text-xs uppercase tracking-widest whitespace-nowrap flex-shrink-0">Gloves</a>
+      <a href="./shop?category=Helmets" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-secondary-fixed/10 text-secondary-fixed hover:bg-secondary-fixed hover:text-primary transition-all font-label-bold text-xs uppercase tracking-widest whitespace-nowrap flex-shrink-0">Helmets</a>
+      <a href="./shop?category=Cricket+Bags" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-secondary-fixed/10 text-secondary-fixed hover:bg-secondary-fixed hover:text-primary transition-all font-label-bold text-xs uppercase tracking-widest whitespace-nowrap flex-shrink-0">Cricket Bags</a>
+      <a href="./shop?category=Kits+%26+Sets" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-secondary-fixed/10 text-secondary-fixed hover:bg-secondary-fixed hover:text-primary transition-all font-label-bold text-xs uppercase tracking-widest whitespace-nowrap flex-shrink-0">Kits &amp; Sets</a>
+      <a href="./shop?category=Accessories" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-secondary-fixed/10 text-secondary-fixed hover:bg-secondary-fixed hover:text-primary transition-all font-label-bold text-xs uppercase tracking-widest whitespace-nowrap flex-shrink-0">Accessories</a>
+      <!-- duplicate for seamless loop -->
+      <a href="./shop?category=Cricket+Bats" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-secondary-fixed/10 text-secondary-fixed hover:bg-secondary-fixed hover:text-primary transition-all font-label-bold text-xs uppercase tracking-widest whitespace-nowrap flex-shrink-0">Cricket Bats</a>
+      <a href="./shop?category=Cricket+Balls" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-secondary-fixed/10 text-secondary-fixed hover:bg-secondary-fixed hover:text-primary transition-all font-label-bold text-xs uppercase tracking-widest whitespace-nowrap flex-shrink-0">Cricket Balls</a>
+      <a href="./shop?category=Pads+%26+Guards" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-secondary-fixed/10 text-secondary-fixed hover:bg-secondary-fixed hover:text-primary transition-all font-label-bold text-xs uppercase tracking-widest whitespace-nowrap flex-shrink-0">Pads &amp; Guards</a>
+      <a href="./shop?category=Gloves" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-secondary-fixed/10 text-secondary-fixed hover:bg-secondary-fixed hover:text-primary transition-all font-label-bold text-xs uppercase tracking-widest whitespace-nowrap flex-shrink-0">Gloves</a>
+      <a href="./shop?category=Helmets" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-secondary-fixed/10 text-secondary-fixed hover:bg-secondary-fixed hover:text-primary transition-all font-label-bold text-xs uppercase tracking-widest whitespace-nowrap flex-shrink-0">Helmets</a>
+      <a href="./shop?category=Cricket+Bags" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-secondary-fixed/10 text-secondary-fixed hover:bg-secondary-fixed hover:text-primary transition-all font-label-bold text-xs uppercase tracking-widest whitespace-nowrap flex-shrink-0">Cricket Bags</a>
+      <a href="./shop?category=Kits+%26+Sets" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-secondary-fixed/10 text-secondary-fixed hover:bg-secondary-fixed hover:text-primary transition-all font-label-bold text-xs uppercase tracking-widest whitespace-nowrap flex-shrink-0">Kits &amp; Sets</a>
+      <a href="./shop?category=Accessories" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-secondary-fixed/10 text-secondary-fixed hover:bg-secondary-fixed hover:text-primary transition-all font-label-bold text-xs uppercase tracking-widest whitespace-nowrap flex-shrink-0">Accessories</a>
+    </div>
   </div>
 </header>
 
