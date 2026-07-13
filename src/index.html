@@ -120,15 +120,19 @@ tailwind.config = {
 @keyframes marquee-ltr{0%{transform:translateX(-50%)}100%{transform:translateX(0)}}
 .animate-marquee-ltr{animation:marquee-ltr 35s linear infinite}
 .marquee-wrapper:hover .animate-marquee-ltr{animation-play-state:paused}
+nav.scrolled { justify-content: center; }
+nav.scrolled #sports-text,
+nav.scrolled .nav-links,
+nav.scrolled .nav-icons { display: none !important; }
 </style>
 </head>
 <body class="bg-background text-on-background selection:bg-secondary-fixed selection:text-primary overflow-x-hidden">
 
 <!-- Top Navigation Bar -->
 <nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-desktop h-16 md:h-16 bg-surface-container-lowest border-b border-outline-variant shadow-sm transition-all duration-300">
-  <div class="flex items-center gap-8">
-    <a class="flex items-center" href="./"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuA36VhuqQ9j4qGqobDqt6yFM_fdxjADH7Q4dTXoi7YQzrqlYnfdM-wbko3rN9HcGG0SJGhYghPAH9RQQSxKSH4fjpLLuN3kPZuV1ilnjXT3lIQI4UsA2Lz8Xtx30kEBV3OIkPDMjILdSE8AzXGchmox89YA-jR79nEvR8jYHAyUgnWhSw0Y9HQsUGnQmdS_suqzWPV-bSD50zOcJEq6-fim6cJmNYoXGObm8MoQX_E3ppYw4PziWx1yi4P8zVmF07lEvCS8rHTczAJs" alt="S7 Sports" class="h-8" /><span id="brand-text" class="font-headline-md text-sm font-black italic text-primary">S7</span></a>
-    <div class="hidden md:flex items-center gap-6">
+  <div class="flex items-center gap-8 nav-left">
+    <a class="flex items-center" href="./"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuA36VhuqQ9j4qGqobDqt6yFM_fdxjADH7Q4dTXoi7YQzrqlYnfdM-wbko3rN9HcGG0SJGhYghPAH9RQQSxKSH4fjpLLuN3kPZuV1ilnjXT3lIQI4UsA2Lz8Xtx30kEBV3OIkPDMjILdSE8AzXGchmox89YA-jR79nEvR8jYHAyUgnWhSw0Y9HQsUGnQmdS_suqzWPV-bSD50zOcJEq6-fim6cJmNYoXGObm8MoQX_E3ppYw4PziWx1yi4P8zVmF07lEvCS8rHTczAJs" alt="S7 Sports" class="h-8" /><span id="brand-text"><span class="font-headline-md text-sm font-black italic text-primary">S7</span> <span id="sports-text" class="text-[10px] font-label-bold text-on-surface-variant tracking-widest">SPORTS</span></span></a>
+    <div class="hidden md:flex items-center gap-6 nav-links">
       <a class="font-body-md text-body-md text-primary font-bold hover:text-secondary transition-colors" href="./">Home</a>
       <a class="font-body-md text-body-md text-primary font-bold hover:text-secondary transition-colors" href="./shop">Shop</a>
       <a class="font-body-md text-body-md text-primary font-bold hover:text-secondary transition-colors" href="./order-status">Track</a>
@@ -136,7 +140,7 @@ tailwind.config = {
       <a class="font-body-md text-body-md text-primary font-bold hover:text-secondary transition-colors" href="./contact">Contact</a>
     </div>
   </div>
-  <div class="hidden md:flex items-center gap-4">
+  <div class="hidden md:flex items-center gap-4 nav-icons">
     <a href="./wishlist" class="material-symbols-outlined text-primary hover:scale-110 transition-transform relative">
       favorite
       <span class="wishlist-badge absolute -top-2 -right-2 bg-secondary-fixed text-primary text-[10px] font-bold px-1.5 py-0.5 rounded-full" style="display:none">0</span>
@@ -210,48 +214,36 @@ tailwind.config = {
       View All Categories <span class="material-symbols-outlined">arrow_right_alt</span>
     </a>
   </div>
-  <div id="category-grid" class="hidden md:grid grid-cols-4 grid-rows-2 gap-6 h-[800px]">
-    <div class="md:col-span-2 md:row-span-2 relative group overflow-hidden rounded-xl border border-outline-variant cursor-pointer">
-      <a href="./shop?category=Cricket+Bats" class="block w-full h-full">
-        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBt-J-kTZjxLIWTu1jq20OwrC0KZh3DK8lVXWui5rJWusOoSj8bhOGrfPORIQcmXqMXZ-2KnSBY0_C3Wpqz9_7kfRjK9Gmz7GyD_FBzepYgI42frPhTmWwubw9VBbGYSTm0wHzhlDSc02qnltJri_29NH9hQjTCdU5o5zudTk_spiWOLdZM0tswp7rLMCCxW0KdVHseNXDUFgHqeMu1_XFMRWNYIkHOSeCphVSeVMIFmMFmmWdEJ5PsMYQBLZ92KxbMSbvwJLTWOTnm')"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent"></div>
-        <div class="absolute bottom-8 left-8">
-          <h3 class="font-headline-md text-surface-container-lowest text-3xl mb-2">Cricket Bats</h3>
-          <p class="text-primary-fixed-dim font-body-md mb-4">Pro-grade performance willow</p>
-          <span class="bg-secondary-fixed text-primary font-label-bold px-6 py-2 rounded uppercase text-xs tracking-wider inline-block">Explore</span>
-        </div>
-      </a>
-    </div>
-    <div class="md:col-span-2 relative group overflow-hidden rounded-xl border border-outline-variant cursor-pointer">
-      <a href="./shop?category=Pads+%26+Guards" class="block w-full h-full">
-        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAYjffNxx-RtNhzaGIVykkf9ti8y1pe9qjnNu0dqhYTLPWvkDaScoV-NMtY5enc1a7Q6wz-0R2o1LYHuZ8bF4ioLbgRuCuenKGWtzGFJATCqd57b3frqr5n-Xtj2e0-ZjSiWXRkVab54stC6yNrAXurQyGRP6GMy_4CQ0KDI-QiXBS_rEkLBWRYCFMkeHtZZ3U62f7XB_lJcXnpnvXqKL7orCGtLPp-dnvn3b77cjDKG-njzUT5hfl406Iwr_vAv158SgT_485Es_9-')"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent"></div>
-        <div class="absolute bottom-6 left-6">
-          <h3 class="font-headline-md text-surface-container-lowest">Pads & Guards</h3>
-        </div>
-      </a>
-    </div>
-    <div class="relative group overflow-hidden rounded-xl border border-outline-variant cursor-pointer">
-      <a href="./shop?category=Cricket+Balls" class="block w-full h-full">
-        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBSduqXCFEOgyKnbdZGzGIqX8r6mF8T9JoD8nTAItRELvDZPbmIdx8n39VIWGs3OqY9SlbC6aMEwFbIouZZH_AU2BUx0nc3SotnMRaXNQ_xv0OeEEI0Dk9426EASUGG39Q0eZtmy-MUkTicdrtnTVubGuisQ09Q6ZKIXCS_NdgKWZqyczd97JCDjob2G0kEN7uKr7wkIzRV898C5BaHdnyQeaviWzwAtN1pb0zp8t3ChS0jrhgv8wiugY1QuvcMQaw12XRjjDlolsnT')"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent"></div>
-        <div class="absolute bottom-6 left-6">
-          <h3 class="font-headline-md text-surface-container-lowest">Cricket Balls</h3>
-        </div>
-      </a>
-    </div>
-    <div class="relative group overflow-hidden rounded-xl border border-outline-variant cursor-pointer">
-      <a href="./shop?category=Gloves" class="block w-full h-full">
-        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCP8EGKMXsTFxXI4EALmScXeRj_SDwZczYFHugGE5alcTgl7mwLn6RqYbLa8U74c3EJ_VJwnFJ3atUl6DZrh-1RIdUnCiq3X8oL9DRFMxx8zg8upH1tpga2NncPKxHUj_xjd391XSX2Y0n5SWUuVbyA5i5cHI8KW4T5I_lNsDZTRk8IghOTtgSNby7nxfcr2Gwsn4m9F-KALe2vBdkkOrgN9RfZhAx36I4KrD4DO5z7BMxoten4w6R2_Mr9O0doLxz-9XoUygTD2BTR')"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent"></div>
-        <div class="absolute bottom-6 left-6">
-          <h3 class="font-headline-md text-surface-container-lowest">Gloves</h3>
-        </div>
-      </a>
-    </div>
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6">
+    <a href="./shop?category=Cricket+Bats" class="relative group overflow-hidden rounded-xl border border-outline-variant aspect-[4/5] md:aspect-[3/4]">
+      <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBt-J-kTZjxLIWTu1jq20OwrC0KZh3DK8lVXWui5rJWusOoSj8bhOGrfPORIQcmXqMXZ-2KnSBY0_C3Wpqz9_7kfRjK9Gmz7GyD_FBzepYgI42frPhTmWwubw9VBbGYSTm0wHzhlDSc02qnltJri_29NH9hQjTCdU5o5zudTk_spiWOLdZM0tswp7rLMCCxW0KdVHseNXDUFgHqeMu1_XFMRWNYIkHOSeCphVSeVMIFmMFmmWdEJ5PsMYQBLZ92KxbMSbvwJLTWOTnm')"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent"></div>
+      <div class="absolute bottom-3 md:bottom-6 left-3 md:left-6">
+        <h3 class="font-headline-md text-sm md:text-headline-md text-surface-container-lowest">Cricket Bats</h3>
+      </div>
+    </a>
+    <a href="./shop?category=Pads+%26+Guards" class="relative group overflow-hidden rounded-xl border border-outline-variant aspect-[4/5] md:aspect-[3/4]">
+      <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAYjffNxx-RtNhzaGIVykkf9ti8y1pe9qjnNu0dqhYTLPWvkDaScoV-NMtY5enc1a7Q6wz-0R2o1LYHuZ8bF4ioLbgRuCuenKGWtzGFJATCqd57b3frqr5n-Xtj2e0-ZjSiWXRkVab54stC6yNrAXurQyGRP6GMy_4CQ0KDI-QiXBS_rEkLBWRYCFMkeHtZZ3U62f7XB_lJcXnpnvXqKL7orCGtLPp-dnvn3b77cjDKG-njzUT5hfl406Iwr_vAv158SgT_485Es_9-')"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent"></div>
+      <div class="absolute bottom-3 md:bottom-6 left-3 md:left-6">
+        <h3 class="font-headline-md text-sm md:text-headline-md text-surface-container-lowest">Pads &amp; Guards</h3>
+      </div>
+    </a>
+    <a href="./shop?category=Cricket+Balls" class="relative group overflow-hidden rounded-xl border border-outline-variant aspect-[4/5] md:aspect-[3/4]">
+      <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBSduqXCFEOgyKnbdZGzGIqX8r6mF8T9JoD8nTAItRELvDZPbmIdx8n39VIWGs3OqY9SlbC6aMEwFbIouZZH_AU2BUx0nc3SotnMRaXNQ_xv0OeEEI0Dk9426EASUGG39Q0eZtmy-MUkTicdrtnTVubGuisQ09Q6ZKIXCS_NdgKWZqyczd97JCDjob2G0kEN7uKr7wkIzRV898C5BaHdnyQeaviWzwAtN1pb0zp8t3ChS0jrhgv8wiugY1QuvcMQaw12XRjjDlolsnT')"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent"></div>
+      <div class="absolute bottom-3 md:bottom-6 left-3 md:left-6">
+        <h3 class="font-headline-md text-sm md:text-headline-md text-surface-container-lowest">Cricket Balls</h3>
+      </div>
+    </a>
+    <a href="./shop?category=Gloves" class="relative group overflow-hidden rounded-xl border border-outline-variant aspect-[4/5] md:aspect-[3/4]">
+      <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCP8EGKMXsTFxXI4EALmScXeRj_SDwZczYFHugGE5alcTgl7mwLn6RqYbLa8U74c3EJ_VJwnFJ3atUl6DZrh-1RIdUnCiq3X8oL9DRFMxx8zg8upH1tpga2NncPKxHUj_xjd391XSX2Y0n5SWUuVbyA5i5cHI8KW4T5I_lNsDZTRk8IghOTtgSNby7nxfcr2Gwsn4m9F-KALe2vBdkkOrgN9RfZhAx36I4KrD4DO5z7BMxoten4w6R2_Mr9O0doLxz-9XoUygTD2BTR')"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent"></div>
+      <div class="absolute bottom-3 md:bottom-6 left-3 md:left-6">
+        <h3 class="font-headline-md text-sm md:text-headline-md text-surface-container-lowest">Gloves</h3>
+      </div>
+    </a>
   </div>
-  <!-- Mobile Category Gallery -->
-  <div id="mobile-category-gallery" class="md:hidden w-full h-[380px] relative overflow-hidden rounded-xl border border-outline-variant"></div>
 </section>
 
 <!-- Featured Products Section -->
@@ -405,14 +397,14 @@ tailwind.config = {
 window.onscroll = function() {
   const nav = document.querySelector('nav');
   if (window.scrollY > 50) {
-    nav.classList.add('rounded-full', 'shadow-lg', 'bg-white', 'backdrop-blur-md', 'h-10', 'px-3');
+    nav.classList.add('scrolled', 'rounded-full', 'shadow-lg', 'bg-white', 'backdrop-blur-md', 'h-10', 'px-3');
     nav.classList.remove('border-b', 'border-outline-variant', 'shadow-sm', 'h-20', 'px-margin-desktop');
     nav.style.left = '15%';
     nav.style.right = '15%';
     nav.style.width = 'auto';
     nav.style.top = '12px';
   } else {
-    nav.classList.remove('rounded-full', 'shadow-lg', 'bg-white', 'backdrop-blur-md', 'h-10', 'px-3');
+    nav.classList.remove('scrolled', 'rounded-full', 'shadow-lg', 'bg-white', 'backdrop-blur-md', 'h-10', 'px-3');
     nav.classList.add('border-b', 'border-outline-variant', 'shadow-sm', 'h-20', 'px-margin-desktop');
     nav.style.left = '';
     nav.style.right = '';
@@ -423,29 +415,6 @@ window.onscroll = function() {
 </script>
 <script type="module" src="./js/main.js"></script>
 <script type="module" src="./js/home.js"></script>
-<script type="module">
-import { initCircularGallery } from './js/circular-gallery.js';
-const container = document.getElementById('mobile-category-gallery');
-if (container && window.innerWidth < 768) {
-  initCircularGallery(container, {
-    items: [
-      { image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBt-J-kTZjxLIWTu1jq20OwrC0KZh3DK8lVXWui5rJWusOoSj8bhOGrfPORIQcmXqMXZ-2KnSBY0_C3Wpqz9_7kfRjK9Gmz7GyD_FBzepYgI42frPhTmWwubw9VBbGYSTm0wHzhlDSc02qnltJri_29NH9hQjTCdU5o5zudTk_spiWOLdZM0tswp7rLMCCxW0KdVHseNXDUFgHqeMu1_XFMRWNYIkHOSeCphVSeVMIFmMFmmWdEJ5PsMYQBLZ92KxbMSbvwJLTWOTnm', text: 'Cricket Bats', href: './shop?category=Cricket+Bats' },
-      { image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAYjffNxx-RtNhzaGIVykkf9ti8y1pe9qjnNu0dqhYTLPWvkDaScoV-NMtY5enc1a7Q6wz-0R2o1LYHuZ8bF4ioLbgRuCuenKGWtzGFJATCqd57b3frqr5n-Xtj2e0-ZjSiWXRkVab54stC6yNrAXurQyGRP6GMy_4CQ0KDI-QiXBS_rEkLBWRYCFMkeHtZZ3U62f7XB_lJcXnpnvXqKL7orCGtLPp-dnvn3b77cjDKG-njzUT5hfl406Iwr_vAv158SgT_485Es_9-', text: 'Pads & Guards', href: './shop?category=Pads+%26+Guards' },
-      { image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBSduqXCFEOgyKnbdZGzGIqX8r6mF8T9JoD8nTAItRELvDZPbmIdx8n39VIWGs3OqY9SlbC6aMEwFbIouZZH_AU2BUx0nc3SotnMRaXNQ_xv0OeEEI0Dk9426EASUGG39Q0eZtmy-MUkTicdrtnTVubGuisQ09Q6ZKIXCS_NdgKWZqyczd97JCDjob2G0kEN7uKr7wkIzRV898C5BaHdnyQeaviWzwAtN1pb0zp8t3ChS0jrhgv8wiugY1QuvcMQaw12XRjjDlolsnT', text: 'Cricket Balls', href: './shop?category=Cricket+Balls' },
-      { image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCP8EGKMXsTFxXI4EALmScXeRj_SDwZczYFHugGE5alcTgl7mwLn6RqYbLa8U74c3EJ_VJwnFJ3atUl6DZrh-1RIdUnCiq3X8oL9DRFMxx8zg8upH1tpga2NncPKxHUj_xjd391XSX2Y0n5SWUuVbyA5i5cHI8KW4T5I_lNsDZTRk8IghOTtgSNby7nxfcr2Gwsn4m9F-KALe2vBdkkOrgN9RfZhAx36I4KrD4DO5z7BMxoten4w6R2_Mr9O0doLxz-9XoUygTD2BTR', text: 'Gloves', href: './shop?category=Gloves' },
-      { image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA36VhuqQ9j4qGqobDqt6yFM_fdxjADH7Q4dTXoi7YQzrqlYnfdM-wbko3rN9HcGG0SJGhYghPAH9RQQSxKSH4fjpLLuN3kPZuV1ilnjXT3lIQI4UsA2Lz8Xtx30kEBV3OIkPDMjILdSE8AzXGchmox89YA-jR79nEvR8jYHAyUgnWhSw0Y9HQsUGnQmdS_suqzWPV-bSD50zOcJEq6-fim6cJmNYoXGObm8MoQX_E3ppYw4PziWx1yi4P8zVmF07lEvCS8rHTczAJs', text: 'Helmets', href: './shop?category=Helmets' },
-      { image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBQOfh494ZKy1-18jOk6U8rpNLBBvWoCjIWZVrZWJR1iiT-y2wrQmVPKWWy9RWBJE--BysIV-L-rROKEHxr1K5hdJM7gQOs2yZ9N8o0WIUmtLXtsX7UTr4DorKNY5vQY-fyJFHFIwB1stwjVuyFuQTSWOo3aL67jOi4ADnytfa3MxISM6XY_H3OPCZ_Lvf2ScIl2-JkOCTwPtcXYexZk5tNgsB9QitryismC5P5bzBcLn-w-7lEaTyFwAQ4PygzU4r_kRYSUzdplHrW', text: 'Cricket Bags', href: './shop?category=Cricket+Bags' },
-      { image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA36VhuqQ9j4qGqobDqt6yFM_fdxjADH7Q4dTXoi7YQzrqlYnfdM-wbko3rN9HcGG0SJGhYghPAH9RQQSxKSH4fjpLLuN3kPZuV1ilnjXT3lIQI4UsA2Lz8Xtx30kEBV3OIkPDMjILdSE8AzXGchmox89YA-jR79nEvR8jYHAyUgnWhSw0Y9HQsUGnQmdS_suqzWPV-bSD50zOcJEq6-fim6cJmNYoXGObm8MoQX_E3ppYw4PziWx1yi4P8zVmF07lEvCS8rHTczAJs', text: 'Kits & Sets', href: './shop?category=Kits+%26+Sets' },
-      { image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBt-J-kTZjxLIWTu1jq20OwrC0KZh3DK8lVXWui5rJWusOoSj8bhOGrfPORIQcmXqMXZ-2KnSBY0_C3Wpqz9_7kfRjK9Gmz7GyD_FBzepYgI42frPhTmWwubw9VBbGYSTm0wHzhlDSc02qnltJri_29NH9hQjTCdU5o5zudTk_spiWOLdZM0tswp7rLMCCxW0KdVHseNXDUFgHqeMu1_XFMRWNYIkHOSeCphVSeVMIFmMFmmWdEJ5PsMYQBLZ92KxbMSbvwJLTWOTnm', text: 'Accessories', href: './shop?category=Accessories' }
-    ],
-    bend: 2.5,
-    textColor: '#caf300',
-    borderRadius: 0.06,
-    font: 'bold 18px Inter',
-    scrollSpeed: 1.5,
-    scrollEase: 0.05
-  });
-}
-</script>
+
 </body>
 </html>
