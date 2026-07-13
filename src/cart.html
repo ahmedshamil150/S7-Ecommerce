@@ -60,7 +60,7 @@ tailwind.config = {
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 nav.scrolled {
-  justify-content: center !important;
+  justify-content: space-between !important;
   width: 70% !important;
   left: 15% !important;
   top: 12px !important;
@@ -75,8 +75,6 @@ nav.scrolled {
 }
 
 nav { transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1); }
-nav.scrolled .nav-links,
-nav.scrolled .nav-icons { display: none !important; }
 </style>
 </head>
 <body class="bg-background text-on-background selection:bg-secondary-fixed selection:text-primary overflow-x-hidden">
@@ -242,6 +240,7 @@ window.onscroll = function() {
 <script type="module" src="./js/cart.js"></script>
 </body>
 </html>
+
 
 
 

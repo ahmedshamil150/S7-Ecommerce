@@ -71,7 +71,7 @@ tailwind.config = {
 .stagger>*{opacity:0;transform:translateY(24px)}.stagger.visible>*{opacity:1;transform:translateY(0)}.stagger.visible>*:nth-child(1){transition-delay:.05s}.stagger.visible>*:nth-child(2){transition-delay:.1s}.stagger.visible>*:nth-child(3){transition-delay:.15s}.stagger.visible>*:nth-child(4){transition-delay:.2s}
 .category-chip.active{background:#000;color:#caf300;border-color:#000}
 nav.scrolled {
-  justify-content: center !important;
+  justify-content: space-between !important;
   width: 70% !important;
   left: 15% !important;
   top: 12px !important;
@@ -86,8 +86,6 @@ nav.scrolled {
 }
 
 nav { transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1); }
-nav.scrolled .nav-links,
-nav.scrolled .nav-icons { display: none !important; }
 </style>
 </head>
 <body class="bg-background text-on-background selection:bg-secondary-fixed selection:text-primary overflow-x-hidden">
@@ -272,6 +270,7 @@ window.onscroll = function() {
 <script type="module" src="./js/shop.js"></script>
 </body>
 </html>
+
 
 
 
