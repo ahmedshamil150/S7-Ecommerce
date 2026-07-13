@@ -41,11 +41,11 @@ async function doLookup(orderId, phone) {
   try {
     const orders = await trackOrder(orderId, phone);
     const o = Array.isArray(orders) ? orders[0] : orders;
-    if (!o) throw new Error('Order not found with that ID and phone number.');
+    if (!o) throw new Error("We couldn't find an order matching that ID and phone number. Double-check your details and try again.");
     currentOrder = o;
     renderOrder(o);
   } catch (err) {
-    contentEl.innerHTML = `<div class="text-center py-12"><span class="material-symbols-outlined text-5xl text-error mb-4">error</span><p class="text-error text-sm">${esc(err.message || 'Order not found. Check your order ID and phone number.')}</p><button onclick="closeOrderModal()" class="mt-6 bg-primary text-white px-6 py-2.5 text-sm font-semibold rounded-lg hover:bg-primary/80 transition-all">Close</button></div>`;
+    contentEl.innerHTML = `<div class="text-center py-12"><span class="material-symbols-outlined text-5xl text-secondary-fixed mb-4">search_off</span><p class="text-on-surface-variant text-sm max-w-xs mx-auto">${esc(err.message || "We couldn't find an order matching that ID and phone number. Double-check your details and try again.")}</p><button onclick="closeOrderModal()" class="mt-6 bg-primary text-white px-6 py-2.5 text-sm font-semibold rounded-lg hover:bg-primary/80 transition-all uppercase tracking-widest">Try Again</button></div>`;
   }
 }
 
@@ -117,29 +117,31 @@ function renderOrder(o) {
   `;
 
   document.getElementById('cancel-order-btn')?.addEventListener('click', async () => {
-    if (!confirm('Are you sure you want to cancel this order? This cannot be undone.')) return;
+    const ok = await confirmAction('This will cancel your S7 Sports order permanently. Continue?');
+    if (!ok) return;
     const btn = document.getElementById('cancel-order-btn');
     btn.disabled = true; btn.textContent = 'Cancelling...';
     try {
       const result = await cancelOrder(o.order_number || o.id, o.customer_phone);
       renderOrder(Array.isArray(result) ? result[0] : result);
-      showToast('Order cancelled successfully.');
+      showToast('Order cancelled. Refund will be processed within 3-5 business days.');
     } catch (err) {
-      showToast(err.message || 'Failed to cancel order.', 'error');
+      showToast(err.message || 'Unable to cancel. Please contact S7 Sports support.', 'error');
       btn.disabled = false; btn.textContent = 'Cancel Order';
     }
   });
 
   document.getElementById('request-return-btn')?.addEventListener('click', async () => {
-    if (!confirm('Request a return for this order? Admin will review your request.')) return;
+    const ok = await confirmAction('Submit a return request for admin review? You will be notified once approved.');
+    if (!ok) return;
     const btn = document.getElementById('request-return-btn');
     btn.disabled = true; btn.textContent = 'Requesting...';
     try {
       const result = await requestReturn(o.order_number || o.id, o.customer_phone);
       renderOrder(Array.isArray(result) ? result[0] : result);
-      showToast('Return requested. Admin will review.');
+      showToast('Return submitted. S7 Sports team will review within 24 hours.');
     } catch (err) {
-      showToast(err.message || 'Failed to request return.', 'error');
+      showToast(err.message || 'Return request failed. Email s7sportspk@gmail.com for help.', 'error');
       btn.disabled = false; btn.textContent = 'Request Return';
     }
   });

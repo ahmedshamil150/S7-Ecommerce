@@ -125,9 +125,32 @@ tailwind.config = {
     <div id="order-modal-content" class="p-6 md:p-8"></div>
   </div>
 </div>
+
+<!-- Confirm Action Modal -->
+<div id="confirm-modal" class="fixed inset-0 z-[60] bg-black/50 flex items-center justify-center p-4 hidden" onclick="if(event.target===this)this.classList.add('hidden')">
+  <div class="bg-surface-container-lowest rounded-xl max-w-sm w-full p-6 shadow-2xl text-center">
+    <span class="material-symbols-outlined text-4xl text-secondary-fixed mb-3">help</span>
+    <p id="confirm-msg" class="text-on-surface font-body-md mb-6"></p>
+    <div class="flex gap-3 justify-center">
+      <button id="confirm-yes" class="bg-primary text-white px-6 py-2.5 text-sm font-semibold rounded-lg hover:bg-primary/80 transition-all uppercase tracking-widest">Yes</button>
+      <button id="confirm-no" class="bg-surface-container-highest text-on-surface px-6 py-2.5 text-sm font-semibold rounded-lg hover:bg-surface-variant transition-all">No</button>
+    </div>
+  </div>
+</div>
+
 <script>
 function closeOrderModal() {
   document.getElementById('order-modal').classList.add('hidden');
+}
+function confirmAction(msg) {
+  return new Promise(resolve => {
+    const el = document.getElementById('confirm-modal');
+    document.getElementById('confirm-msg').textContent = msg;
+    el.classList.remove('hidden');
+    el.onclick = e => { if (e.target === el) { el.classList.add('hidden'); resolve(false); } };
+    document.getElementById('confirm-yes').onclick = () => { el.classList.add('hidden'); resolve(true); };
+    document.getElementById('confirm-no').onclick = () => { el.classList.add('hidden'); resolve(false); };
+  });
 }
 </script>
 

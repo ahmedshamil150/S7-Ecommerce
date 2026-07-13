@@ -69,11 +69,11 @@ export function showToast(msg, type = 'success') {
     transform: 'translateX(120%)', opacity: '0',
     transition: 'transform 0.35s cubic-bezier(0.4,0,0.2,1), opacity 0.35s ease',
     pointerEvents: 'auto', display: 'flex', alignItems: 'center', gap: '8px',
-    color: '#fff', background: type === 'error' ? '#dc2626' : '#0F5E3A',
+    color: type === 'error' ? '#fff' : '#000', background: type === 'error' ? '#dc2626' : '#caf300',
   });
   const icon = document.createElement('span');
   icon.className = 'material-symbols-outlined';
-  icon.textContent = type === 'error' ? 'error' : 'check_circle';
+  icon.textContent = type === 'error' ? 'error' : 'verified';
   Object.assign(icon.style, { fontSize: '18px' });
   toast.prepend(icon);
   container.appendChild(toast);
