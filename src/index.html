@@ -119,6 +119,7 @@ tailwind.config = {
 .marquee-wrapper{overflow:hidden;white-space:nowrap;width:100%}
 @keyframes marquee-ltr{0%{transform:translateX(-50%)}100%{transform:translateX(0)}}
 .animate-marquee-ltr{animation:marquee-ltr 35s linear infinite}
+.marquee-wrapper:hover .animate-marquee-ltr{animation-play-state:paused}
 </style>
 </head>
 <body class="bg-background text-on-background selection:bg-secondary-fixed selection:text-primary overflow-x-hidden">
