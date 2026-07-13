@@ -27,11 +27,16 @@ function stars(rating) {
   return '★'.repeat(rating) + '☆'.repeat(5 - rating);
 }
 
+function showOrderModal() {
+  document.getElementById('order-modal').classList.remove('hidden');
+}
+
 async function doLookup(orderId, phone) {
-  const resultEl = document.getElementById('order-result');
+  const contentEl = document.getElementById('order-modal-content');
   const errorEl = document.getElementById('order-error');
-  resultEl.innerHTML = '<div class="text-center py-8"><div class="animate-spin w-8 h-8 border-4 border-secondary-fixed border-t-transparent rounded-full mx-auto mb-3"></div><p class="text-on-surface-variant text-sm">Looking up your order...</p></div>';
+  contentEl.innerHTML = '<div class="text-center py-8"><div class="animate-spin w-8 h-8 border-4 border-secondary-fixed border-t-transparent rounded-full mx-auto mb-3"></div><p class="text-on-surface-variant text-sm">Looking up your order...</p></div>';
   errorEl.classList.add('hidden');
+  showOrderModal();
 
   try {
     const orders = await trackOrder(orderId, phone);
@@ -39,20 +44,17 @@ async function doLookup(orderId, phone) {
     if (!o) throw new Error('Order not found with that ID and phone number.');
     currentOrder = o;
     renderOrder(o);
-    resultEl.classList.remove('hidden');
   } catch (err) {
-    resultEl.innerHTML = '';
-    errorEl.textContent = err.message || 'Order not found. Check your order ID and phone number.';
-    errorEl.classList.remove('hidden');
+    contentEl.innerHTML = `<div class="text-center py-12"><span class="material-symbols-outlined text-5xl text-error mb-4">error</span><p class="text-error text-sm">${esc(err.message || 'Order not found. Check your order ID and phone number.')}</p><button onclick="closeOrderModal()" class="mt-6 bg-primary text-white px-6 py-2.5 text-sm font-semibold rounded-lg hover:bg-primary/80 transition-all">Close</button></div>`;
   }
 }
 
 function renderOrder(o) {
-  const resultEl = document.getElementById('order-result');
+  const contentEl = document.getElementById('order-modal-content');
   const items = Array.isArray(o.items) ? o.items : [];
 
-  resultEl.innerHTML = `
-    <div class="bg-surface-container-lowest rounded-xl border border-outline-variant p-6 md:p-8 mb-6">
+  contentEl.innerHTML = `
+    <div class="mb-6">
       <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
         <div>
           <p class="text-xs text-on-surface-variant uppercase tracking-widest font-semibold mb-1">Order Number</p>
@@ -81,7 +83,6 @@ function renderOrder(o) {
         <p class="text-sm">${esc(o.customer_address)}</p>
       </div>
 
-      <!-- Items -->
       <div class="border-t border-outline-variant pt-4">
         <p class="text-xs text-on-surface-variant uppercase tracking-widest font-semibold mb-3">Items</p>
         <div class="space-y-3">
@@ -104,7 +105,6 @@ function renderOrder(o) {
       </div>
     </div>
 
-    <!-- Actions -->
     <div class="flex flex-wrap gap-3">
       ${o.status === 'pending' ? `
         <button id="cancel-order-btn" class="bg-red-500 text-white px-6 py-2.5 text-sm font-semibold rounded-lg hover:bg-red-600 transition-all">Cancel Order</button>
@@ -112,6 +112,7 @@ function renderOrder(o) {
       ${['confirmed', 'shipped', 'delivered'].includes(o.status) ? `
         <button id="request-return-btn" class="bg-orange-500 text-white px-6 py-2.5 text-sm font-semibold rounded-lg hover:bg-orange-600 transition-all">Request Return</button>
       ` : ''}
+      <button onclick="closeOrderModal()" class="bg-surface-container-highest text-on-surface px-6 py-2.5 text-sm font-semibold rounded-lg hover:bg-surface-variant transition-all ml-auto">Close</button>
     </div>
   `;
 

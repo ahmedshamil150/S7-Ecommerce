@@ -113,10 +113,23 @@ tailwind.config = {
       <p id="order-error" class="text-error text-sm mt-4 hidden"></p>
     </div>
 
-    <!-- Order Result -->
-    <div id="order-result" class="hidden"></div>
   </div>
 </section>
+
+<!-- Order Result Modal -->
+<div id="order-modal" class="fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-4 hidden" onclick="if(event.target===this)closeOrderModal()">
+  <div class="bg-surface-container-lowest rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto relative shadow-2xl">
+    <button id="modal-close" onclick="closeOrderModal()" class="absolute top-4 right-4 text-on-surface-variant hover:text-on-surface z-10 w-8 h-8 flex items-center justify-center rounded-full hover:bg-surface-container-highest transition-all">
+      <span class="material-symbols-outlined">close</span>
+    </button>
+    <div id="order-modal-content" class="p-6 md:p-8"></div>
+  </div>
+</div>
+<script>
+function closeOrderModal() {
+  document.getElementById('order-modal').classList.add('hidden');
+}
+</script>
 
 <footer class="w-full bg-primary mt-12">
   <div class="border-b border-primary-fixed-dim/20 px-margin-mobile md:px-margin-desktop py-8">
